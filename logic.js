@@ -1,6 +1,6 @@
 async function getAllProducts(){
-    const result = await makeRequest("./api/recivers/productReciever.php", "GET")
-    //console.log(result)
+    const result = await makeRequest("./api/recievers/productReciever.php", "GET")
+    console.log(result)
 }
 
 
@@ -9,7 +9,7 @@ async function deleteAllProducts(){
     let body = new FormData()
     body.append("action", "deleteAll")
 
-    const result = await makeRequest("./api/productReciever.php", "GET", body)
+    const result = await makeRequest("./api/recievers/productReciever.php", "GET", body)
     console.log(result)
 }
 
@@ -26,7 +26,7 @@ async function addProduct(){
     body.append("action", "add")
     body.append("product", JSON.stringify(product))
 
-    const result = await makeRequest("./api/productReciever.php", "POST", body)
+    const result = await makeRequest("./api/recievers/productReciever.php", "POST", body)
     console.log(result)
 }
 
