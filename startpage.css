@@ -11,6 +11,8 @@ body {
 main {
     padding-top: 1em;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 nav {
@@ -40,6 +42,28 @@ nav a{
     font-weight: bold;
     padding: 16px 4px;
 }
+h1 {
+    padding: 16px 4px;
+}
 h2 {
     padding: 16px 4px;
 }
+p {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 1em;
+    color: #000;
+}
+input[type=text], select {
+    font-family: 'Roboto', sans-serif;
+    padding: 8px 8px;
+    margin: 0.2em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .btn {
+      margin: 0.2em;
+  }
