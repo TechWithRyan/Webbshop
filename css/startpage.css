@@ -1,7 +1,22 @@
 *  {
     box-sizing: border-box;
 }
-
+#allProducts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.productDiv {
+    margin: 20px;
+    padding: 10px;
+    background-color: #C4C4C4;
+    border-radius: 20px;
+    text-align: center;
+}
+.productImage {
+    width: 90px;
+    height: 70px;
+}
 body {
     padding: 0;
     height: 100vh;
