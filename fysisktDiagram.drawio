@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-18T16:11:12.676Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="lzu4JVU5pU0COsCPNa6G" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-18T16:13:35.777Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="ecyxreijOCRwg8s4A8P_" version="14.2.4" type="embed">
     <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
         <mxGraphModel dx="502" dy="453" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#DAD2D8" math="0" shadow="0">
             <root>
@@ -361,7 +361,7 @@
                 <mxCell id="7CMeh297SP7o4FMxIKgV-287" value="TotalPrice" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-285" vertex="1">
                     <mxGeometry x="28" width="100" height="29" as="geometry"/>
                 </mxCell>
-                <mxCell id="7CMeh297SP7o4FMxIKgV-288" value="FLOAT(4)" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-285" vertex="1">
+                <mxCell id="7CMeh297SP7o4FMxIKgV-288" value="MONEY(12)" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-285" vertex="1">
                     <mxGeometry x="128" width="82" height="29" as="geometry"/>
                 </mxCell>
                 <mxCell id="138" value="SHIPPER" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" parent="1" vertex="1">
@@ -577,7 +577,7 @@
                 <mxCell id="7CMeh297SP7o4FMxIKgV-283" value="totalPrice" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-281" vertex="1">
                     <mxGeometry x="35" width="97" height="29" as="geometry"/>
                 </mxCell>
-                <mxCell id="7CMeh297SP7o4FMxIKgV-284" value="MONEY(9)" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-281" vertex="1">
+                <mxCell id="7CMeh297SP7o4FMxIKgV-284" value="MONEY(12)" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=#0F8B8D;fontColor=#143642;" parent="7CMeh297SP7o4FMxIKgV-281" vertex="1">
                     <mxGeometry x="132" width="78" height="29" as="geometry"/>
                 </mxCell>
                 <mxCell id="S2CIsZBpXwnliSbpIKQO-269" value="categoryDetails" style="shape=table;html=1;whiteSpace=wrap;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fontStyle=1;align=center;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" parent="1" vertex="1">
