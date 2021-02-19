@@ -226,7 +226,6 @@ function cartSort(userId, shipperID){
     }
 
     let cart = getCart()
-    console.log(cart)
 
     cart.forEach((product) => {
         let exists = false
