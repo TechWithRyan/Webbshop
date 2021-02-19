@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/startpage.css">
-    <script defer src="logic.js"></script>
-    <script defer src="index.js"></script>
+    <!-- <script defer src="logic.js"></script> 
+    <script defer src="index.js"></script>-->
+    <script defer type="module" src="./handler.js"></script>
 </head>
 <body>
-
+<header>
 <div class="header">
     <div class="menu-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -25,9 +26,6 @@
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.html"><i class="bi bi-signpost-2-fill" style="font-size: 1,5rem;"></i> About us </a>
-                      </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-signpost-2-fill" style="font-size: 1,5rem;"></i> Kategorier </a>
                   </li>
@@ -38,17 +36,27 @@
                     <a class="nav-link" href="#"><i class="bi bi-bag-fill" style="font-size: 1,5rem;"></i><span> 0</span> Kundkorg </a>
                   </li>
                 </ul>
+                <div class="loginText">
+        <a href="login.php">Inloggning</a>
+    </div>
+    <div class="myPageText">
+        <a href="myPage.php">Mina sidor</a>
+    </div>
+    <div class="cartField">
+        <div id="numberOfItemsInCart"></div>
+        <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
+    </div>
               </div>
             </div>
           </nav>
     </div>
 </div>
-
+</header>
 <main>
 
     <h1>Hello Retro Lovers</h1>
 
-    <div class="container mt-4">
+    <!-- <div class="container mt-4">
         <div class="row justify-content-center">
 
         <div class="col-md-4 col-12">
@@ -93,11 +101,11 @@
         
 
         </div>
-    </div>
+    </div> -->
 
     <br>
 
-
+<div id="allProducts"></div>
 </main>
 
 <footer>
@@ -106,13 +114,13 @@
         <div class="col-md-4 col-12">
             <h4>Newsletter</h4>
             <input id="mail" type="email" placeholder="E-post"/>
-<!--             <input id="price" type="price" placeholder="Pris"/>
-            <input id="size" type="size" placeholder="Storlek"/> -->
+             <input id="price" type="price" placeholder="Pris"/>
+            <input id="size" type="size" placeholder="Storlek"/>
         
             <button type="button" class="btn btn-success" onclick="getAllProducts()">Sign up</button>
-            <!-- <button type="button" class="btn btn-success" onclick="deleteAllProducts()">Radera alla produkter</button>
+             <button type="button" class="btn btn-success" onclick="deleteAllProducts()">Radera alla produkter</button>
             <button type="button" class="btn btn-success" onclick="addProduct()">Lägg till produkt</button>
-         -->
+         
         </div>
         <div class="col-md-4 col-12">
           Länkar
@@ -122,8 +130,7 @@
         </div>
       </div>
     </div>
-
-</footer>
+    </footer>
 
 </body>
 </html>

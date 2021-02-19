@@ -1,0 +1,137 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+} 
+
+  
+.loginCartWrap {  
+    display: flex;                          
+    width: 30vw;
+    margin-right: 3vw;
+    align-items: center;
+}
+
+.myPageText, .loginText, .cartField {
+    width: 30%;
+    text-align: center;
+    padding: 15px;
+}
+
+.myPageText > a, .loginText > a, .cartField > a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.myPageText:hover, .loginText:hover, .cartField:hover  {
+    background-color: #706C61;
+}
+
+.cartField {
+    display: inline-flex;
+    justify-content: center;
+}    
+
+.article {
+    background-color: white;
+    margin: 0 auto;
+    width: 95vw;
+    height: auto;
+    text-align: justify;
+    padding: 20px;
+}
+
+footer {
+    margin: 0 auto;
+    width: 100vw;
+    height: auto;
+    background-color: #6d965a;
+    margin-top: 20px;
+}
+
+.newsletterField {
+    background-color: #e0d9ca;
+    width: 60vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.newsletterInput {
+    color: #C4C4C4;
+    padding: 5px;
+    outline: none;
+}
+
+.sendBtn {
+    background-color: #706C61;
+    border: none;
+    color:white;
+    text-decoration: none;
+    padding: 5px;
+    margin: 10px;
+    outline: none;
+}
+
+.sendBtn:hover {
+    cursor: pointer;
+}
+
+.footWrap {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.footWrap a {
+    text-decoration: none;
+    color: black;
+}
+
+.mobileScreenMenu {
+    display:none;
+} 
+
+#allProducts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.productDiv {
+    margin: 20px;
+    padding: 10px;
+    background-color: #C4C4C4;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.productImage {
+    width: 90px;
+    height: 70px;
+}
+
+.addToCartBtn {
+    background-color: #333333;
+    color: white;
+    outline-style: none;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fa-cart-arrow-down {
+    font-size: 13px;
+    color: white;
+    padding-left: 10px;
+}

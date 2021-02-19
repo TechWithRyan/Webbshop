@@ -1,0 +1,27 @@
+.checkOutForm {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#checkoutField > h1 {
+    font-size: 1em;
+}
+
+#userData {
+    padding: 40px;
+    text-align: center;
+}
+
+input[type=text] {
+    margin: 5px;
+}
+
+#shippers {
+    text-align: center;
+}
+
+.categoryTitle {
+    text-align: center;
+    font-size: 2em;
+}
+
