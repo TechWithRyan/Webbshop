@@ -1,0 +1,27 @@
+
+.deleteProductBtn {
+    background-color: #333333;
+    color: white;
+    outline: none;
+    width: 80px;
+    height: 30px;   
+}
+
+#toIndex > a {
+    text-decoration: none;
+    color: black;
+}
+
+.sumText {
+    font-size: 20px;
+    color: #333333;
+}
+#goToCheckout > a {
+    background-color: #333333;
+    color: #ffffff;
+    width: 80px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px; 
+}
+

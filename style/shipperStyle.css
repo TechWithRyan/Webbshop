@@ -1,0 +1,44 @@
+.shipperDiv {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.shipperID, .shipperName, .shipperInfo {
+    width: 20%;
+}
+
+.shipperName {
+    font-size: xx-large;
+}
+
+.shipperID {
+    font-size: 1.2em;
+    border: 2px slategray solid;
+}
+
+.buttonDiv {
+    background-color: 333333;
+    width: 20%;
+}
+
+.chooseShipper {
+    background-color: #333333;
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+@media only screen and (max-width: 800px) {
+    .shipperName {
+        font-size: 1em;
+        width: 90%;
+        background-color: #E1F4F3;
+    }
+
+    .shipperInfo, .shipperID {
+        width: 90%;
+    }
+}
