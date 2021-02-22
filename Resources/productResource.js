@@ -24,7 +24,7 @@ export function getAllCategory() {
     } else if (category == "Dam") {
         categorytoSend = 2;
     }
-    makeRequest('./API/recievers/categoryReciever.php?endpoint=getSpecific&categorytoSend=' + categorytoSend , 'GET', null, (result) => {
+    makeRequest('./../API/recievers/categoryReciever.php?endpoint=getSpecific&categorytoSend=' + categorytoSend , 'GET', null, (result) => {
         const showProducts = document.getElementById("allProducts")
         showProducts.innerHTML = "" 
 
@@ -115,7 +115,7 @@ export function getDiscount() {
     })
 }
 
-/* function showBothMenAndWomen(){
+function showBothMenAndWomen(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
     for (let i = 0; i < result.length; i++){
         const showProducts = document.getElementById("allProducts")
@@ -163,7 +163,7 @@ export function getDiscount() {
     }
 })
 }
-showBothMenAndWomen() */
+showBothMenAndWomen()
 
 function saveToLocalStorage(selectedProduct) {
     /* Sparar kundvagnen till localstorage */
