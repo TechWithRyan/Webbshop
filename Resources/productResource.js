@@ -31,34 +31,39 @@ export function getAllCategory() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
+            const productContainer = document.createElement("div")
+            productContainer.className = "col-md-4 col-12"
+
             const productDiv = document.createElement("div")
-            productDiv.classList = "productDiv"
+            productDiv.className = "card"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct + image)
-            image.classList = "productImage"
+            image.className = "img-product"
             // Kundvagns-ikon i knappen
             const cartIcon = document.createElement("i") 
-            cartIcon.classList = "fas fa-cart-arrow-down"
+            cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
-            addToCartBtn.innerHTML = "Köp"
-            addToCartBtn.classList = "addToCartBtn"
+            addToCartBtn.className = "btn btn-outline-success"
+            addToCartBtn.innerHTML = " Köp "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
                 numberOfProductsInCart()           
             }) 
-            const title = document.createElement("p")
+            const title = document.createElement("h3")
             title.innerHTML = selectedProduct.name
-            const price = document.createElement("p") 
+            const price = document.createElement("h3") 
             price.innerHTML = selectedProduct.price - selectedProduct.discount + " kr"
 
+            productContainer.append(productDiv) 
             productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
 
             if(selectedProduct.discount != 0) {
-                const discount = document.createElement("p")
+                const discount = document.createElement("h4")
+                discount.className = "badge bg-primary"
                 discount.innerHTML = "10 %"
                 discount.id = "discount"
                 productDiv.append(discount)
@@ -78,32 +83,37 @@ export function getDiscount() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
+            const productContainer = document.createElement("div")
+            productContainer.className = "col-md-4 col-12"
+
             const productDiv = document.createElement("div")
-            productDiv.classList = "productDiv"
+            productDiv.className = "card"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct.image)
-            image.classList = "productImage"
+            image.className = "img-product"
             // Kundvagns-ikon i knappen
             const cartIcon = document.createElement("i") 
-            cartIcon.classList = "fas fa-cart-arrow-down"
+            cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
-            addToCartBtn.innerHTML = "Köp"
-            addToCartBtn.classList = "addToCartBtn"
+            addToCartBtn.className = "btn btn-outline-success"
+            addToCartBtn.innerHTML = " Köp "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
                 numberOfProductsInCart()                 
             }) 
-            const title = document.createElement("p")
+            const title = document.createElement("h3")
             title.innerHTML = selectedProduct.name
-            const price = document.createElement("p") 
+            const price = document.createElement("h3") 
             price.innerHTML = selectedProduct.price - selectedProduct.discount +  " kr"
 
-            const discount = document.createElement("p")
+            const discount = document.createElement("h4")
+            discount.className = "badge bg-primary"
             discount.innerHTML = "10 %"
             discount.id = "discount"
 
+            productContainer.append(productDiv) 
             productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
@@ -124,34 +134,39 @@ function showBothMenAndWomen(){
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
+            const productContainer = document.createElement("div")
+            productContainer.className = "col-md-4 col-12"
+
             const productDiv = document.createElement("div")
-            productDiv.classList = "productDiv"
+            productDiv.className = "card"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct.image)
-            image.classList = "productImage"
+            image.className = "img-product"
             // Kundvagns-ikon i knappen
             const cartIcon = document.createElement("i") 
-            cartIcon.classList = "fas fa-cart-arrow-down"
+            cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
-            addToCartBtn.innerHTML = "Köp"
-            addToCartBtn.classList = "addToCartBtn"
+            addToCartBtn.className = "btn btn-outline-success"
+            addToCartBtn.innerHTML = " Köp "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
                 numberOfProductsInCart()
             }) 
-            const title = document.createElement("p")
+            const title = document.createElement("h3")
             title.innerHTML = selectedProduct.name
-            const price = document.createElement("p") 
+            const price = document.createElement("h3") 
             price.innerHTML = selectedProduct.price - selectedProduct.discount + " kr"
 
+            productContainer.append(productDiv) 
             productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
 
             if(selectedProduct.discount != 0) {
-                const discount = document.createElement("p")
+                const discount = document.createElement("h4")
+                discount.className = "badge bg-primary"
                 discount.innerHTML = "10 %"
                 discount.id = "discount"
                 productDiv.append(discount)
