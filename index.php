@@ -26,8 +26,10 @@
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-signpost-2-fill" style="font-size: 1,5rem;"></i> Kategorier </a>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html"> About <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
+
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-person-circle" style="font-size: 1,5rem;"></i> Profil </a>
