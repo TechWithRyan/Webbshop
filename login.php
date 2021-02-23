@@ -17,21 +17,22 @@
         <a href="index.php"><h1 class="textTitle">Retro</h1></a>
     </div>
 </header>
-    
-<nav> 
-    <div class="loginCartWrap">
-    <div class="loginText">
-        <a href="login.php">Inloggning</a>
-    </div>
-    <div class="myPageText">
-        <a href="myPage.php">Mina sidor</a>
-    </div>
-    <div class="cartField">
-    <div id="numberOfItemsInCart"></div>
-        <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
-    </div>
-    </div>
-</nav>
+
+<main>
+    <nav> 
+        <div class="loginCartWrap">
+        <div class="loginText">
+            <a href="login.php">Inloggning</a>
+        </div>
+        <div class="myPageText">
+            <a href="myPage.php">Mina sidor</a>
+        </div>
+        <div class="cartField">
+        <div id="numberOfItemsInCart"></div>
+            <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
+        </div>
+        </div>
+    </nav>
 
     <div id="loginDiv">
         <h1>Username</h1>
@@ -42,14 +43,34 @@
     </div>
 
     <div id="logoutDiv">
-        <p>Tryck knappen för att logga ut</p>
+        <p>Tryck på knappen för att logga ut</p>
         <button id="logout_btn">Logga ut</button>
     </div>
+</main>
    
     
     
 <footer>
-   
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-md-4 col-12">
+                <h3>Get our newsletter</h3>
+                <form class="newsletterField" id ="newsletter-form">
+                    <label for="firstname"></label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
+                    <label for="lastname"></label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
+                    <label for="email"></label>
+                    <input type="text" name="email" id="email" placeholder="E-post">
+                    <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Sign up</button>
+                </form>
+            </div>
+        <div class="col-md-4 col-12"> <a href="http://www.google.com"> Länkar</a></div>
+        <div class="col-md-4 col-12"><a href="http://www.googlemaps.com">Adress</a></div>
+        </div>
+        </div>
+    </div>
 </footer>
+
 </body>
 </html>
