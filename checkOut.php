@@ -35,7 +35,7 @@
     </div>
 </nav>   
     <div class="categoryTitle">
-        <h2>Sluttför inköp</h2>
+        <h2>Slutför köp</h2>
     </div>
     <div class="checkOutForm">                     
     <!-- <div id="checkoutField" id="userData">
@@ -68,7 +68,7 @@
     <footer>
     <br> <br>
     <form class="newsletterField" id ="newsletter-form">
-    Please sign in for NewsLetters !!!
+    Please sign up for our newsletters
     <br>
     <label for="email">Email</label>
     <input type="text" name="email" id="email">
