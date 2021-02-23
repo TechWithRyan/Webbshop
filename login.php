@@ -20,10 +20,31 @@
 
 <body>
 <header>
-    <div class="headTitle">
-        <a href="index.php"><h1 class="textTitle">Retro</h1></a>
+<div class="header">
+    <div class="menu-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.php">Retro</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>
+                  </li>
+                </ul>
+          </nav>
     </div>
+</div>
 </header>
+
 
 <main>
     <nav> 
@@ -40,7 +61,7 @@
         </div>
         </div>
     </nav>
-
+   
     <div id="loginDiv">
         <h1>Username</h1>
         <input type="text" id="usernameInput">
