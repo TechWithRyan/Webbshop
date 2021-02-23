@@ -14,6 +14,7 @@ function makeRequest(url, method, FormData, callback) {
 }
 
 export function getAllShippers() {
+        event.preventDefault()
         makeRequest('./../API/recievers/shippersReciever.php?endpoint=getAllShippers', 'GET', null, (result) => {
         if (result.status == 404){
         } else {

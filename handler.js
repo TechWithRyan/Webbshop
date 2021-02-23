@@ -1,6 +1,6 @@
 import { getAllCategory } from './Resources/productResource.js'
 import { getDiscount } from './Resources/productResource.js'
-import {sendNewsLetter} from './Resources/newsLetterResource.js'
+//import {sendNewsLetter} from './Resources/newsLetterResource.js'
 
 var iKundvagn = [];
 
@@ -25,10 +25,10 @@ function makeRequest(url, method, FormData, callback) {
     })
 }
 
-//document.getElementById("men").addEventListener("click", getAllCategory);
-//document.getElementById("women").addEventListener("click", getAllCategory)
-//document.getElementById("barn").addEventListener("click", getAllCategory)
-//document.getElementById("sale").addEventListener("click", getDiscount)
-//document.getElementById("newsletter-form").addEventListener("submit", sendNewsLetter)
+document.getElementById("men").addEventListener("click", getAllCategory);
+document.getElementById("women").addEventListener("click", getAllCategory)
+document.getElementById("barn").addEventListener("click", getAllCategory)
+document.getElementById("sale").addEventListener("click", getDiscount)
+document.getElementById("newsletter-form").addEventListener("submit", sendNewsLetter)
 
 
