@@ -47,11 +47,9 @@
 
 
 <main>
-    <nav> 
+ <!--    <nav> 
         <div class="loginCartWrap">
-        <div class="loginText">
-            <a href="login.php">Inloggning</a>
-        </div>
+     
         <div class="myPageText">
             <a href="myPage.php">Mina sidor</a>
         </div>
@@ -61,11 +59,13 @@
         </div>
         </div>
     </nav>
-   
+    -->
+
+    <div class="loginText"><!-- <a href="login.php"> -->Inloggning<!-- </a> --></div>
     <div id="loginDiv">
-        <h1>Username</h1>
+        <h1>Användarnamn</h1>
         <input type="text" id="usernameInput">
-        <h1>Password</h1>
+        <h1>Lösenord</h1>
         <input type="password" id="passwordInput">
         <button id="login_btn">Login</button>
     </div>
