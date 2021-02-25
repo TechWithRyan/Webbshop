@@ -10,17 +10,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/startpage.css">
-    <!-- <script defer src="logic.js"></script> 
-    <script defer src="index.js"></script>-->
     <script defer type="module" src="./handler.js"></script>
 </head>
 <body>
+
 <header>
 <div class="header">
     <div class="menu-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Retro</a>
+              <a class="navbar-brand" href="index.php">Retro</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -30,99 +29,43 @@
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.html"> About <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
 
+
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-person-circle" style="font-size: 1,5rem;"></i> Profil </a>
+                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-bag-fill" style="font-size: 1,5rem;"></i><span> 0</span> Kundkorg </a>
+                    <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>
                   </li>
                 </ul>
-                <div class="loginText">
-        <a href="login.php">Inloggning</a>
-    </div>
-    <div class="myPageText">
-        <a href="myPage.php">Mina sidor</a>
-    </div>
-    <div class="cartField">
-        <div id="numberOfItemsInCart"></div>
-        <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
-    </div>
-              </div>
-            </div>
           </nav>
     </div>
 </div>
 </header>
-<main>
 
-    <h1>Hello Retro Lovers</h1>
-
-    <!-- <div class="container mt-4">
-        <div class="row justify-content-center">
-
-        <div class="col-md-4 col-12">
-            <div class="card">
-                <div class="img">
-                <img src="template/woolsweater.png" class="card-img-top" alt="...">
-            </div>
-                <div class="card-body">
-                <h5 class="card-title">Wool sweater</h5>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-success">Lägg i varukorg</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-12">
-            <div class="card">
-                <div class="img">
-                <img src="template/paisleyscarf.png" class="card-img-top" alt="...">
-            </div>
-                <div class="card-body">
-                <h5 class="card-title">Paisley scarf</h5>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-success">Lägg i varukorg</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-12">
-            <div class="card">
-                <div class="img">
-                <img src="template/yellowbeanie.png" class="card-img-top" alt="...">
-            </div>
-                <div class="card-body">
-                <h5 class="card-title">Yellow beanie</h5>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-success">Lägg i varukorg</a>
-                </div>
-            </div>
-        </div>
-
-        
-
-        </div>
-    </div> -->
-
-    <br>
-
-<div id="allProducts"></div>
+<main class="container">
+  
+  <h1>Hello Retro Lovers</h1>
+  
+  <div class="col">
+  <div id="allProducts"></div>
+</div>
 </main>
-
+  
 <footer>
     <div class="container">
     <div class="row align-items-end">
         <div class="col-md-4 col-12">
-            <h4>Newsletter</h4>
-            <input id="mail" type="email" placeholder="E-post"/>
-             <input id="price" type="price" placeholder="Pris"/>
-            <input id="size" type="size" placeholder="Storlek"/>
-        
-            <button type="button" class="btn btn-success" onclick="getAllProducts()">Sign up</button>
-             <button type="button" class="btn btn-success" onclick="deleteAllProducts()">Radera alla produkter</button>
-            <button type="button" class="btn btn-success" onclick="addProduct()">Lägg till produkt</button>
-         
+            <h3>Get our newsletter</h3>
+    <form class="newsletterField" id ="newsletter-form">
+    <label for="firstname"></label>
+      <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
+      <label for="lastname"></label>
+      <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
+      <label for="email"></label>
+      <input type="text" name="email" id="email" placeholder="E-post">
+      <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Sign up</button>
+    </form>
         </div>
         <div class="col-md-4 col-12">
           Länkar
@@ -133,6 +76,8 @@
       </div>
     </div>
     </footer>
+
+
 
 </body>
 </html>
