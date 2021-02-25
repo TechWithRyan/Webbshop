@@ -56,7 +56,7 @@ footer {
     margin-top: 20px;
 }
 
-.newsletterField {
+/* .newsletterField {
     background-color: #e0d9ca;
     width: 60vw;
     height: auto;
@@ -64,15 +64,15 @@ footer {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
-}
+} */
 
-.newsletterInput {
+/* .newsletterInput {
     color: #C4C4C4;
     padding: 5px;
     outline: none;
-}
+} */
 
-.sendBtn {
+/* .sendBtn {
     background-color: #706C61;
     border: none;
     color:white;
@@ -84,7 +84,7 @@ footer {
 
 .sendBtn:hover {
     cursor: pointer;
-}
+} */
 
 .footWrap {
     display: flex;

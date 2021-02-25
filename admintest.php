@@ -42,22 +42,19 @@
 </div>
 </header>
 
-<!-- <hero class="img-fluid"><img src="img/best-vintage-thrift-stores-sydney.jpg"></hero> -->
-
 <main class="container">
   
-  <h1>Hello Retro Lovers</h1>
-    <div class="row">
-      <div id="productContainer">
-        <div id="allProducts"></div>
-      </div>
-    </div>
+  <h1>Adminsida</h1>
+  
+  <div class="col">
+  <div id="allProducts"></div>
+</div>
 </main>
   
 <footer>
     <div class="container">
-    <div class="row">
-        <div class="col-12">
+    <div class="row align-items-end">
+        <div class="col-md-4 col-12">
             <h3>Get our newsletter</h3>
     <form class="newsletterField" id ="newsletter-form">
     <label for="firstname"></label>
@@ -68,6 +65,12 @@
       <input type="text" name="email" id="email" placeholder="E-post">
       <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Sign up</button>
     </form>
+        </div>
+        <div class="col-md-4 col-12">
+          Länkar
+        </div>
+        <div class="col-md-4 col-12">
+          Adress
         </div>
       </div>
     </div>

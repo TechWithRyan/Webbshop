@@ -31,7 +31,7 @@ export function getAllCategory() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.getElementById("productContainer")
+            const productContainer = document.createElement("div")
             productContainer.className = "col-md-4 col-12"
 
             const productDiv = document.createElement("div")
@@ -45,7 +45,7 @@ export function getAllCategory() {
             cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
             addToCartBtn.className = "btn btn-outline-success"
-            addToCartBtn.innerHTML = " Köp "
+            addToCartBtn.innerHTML = " update "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
@@ -83,7 +83,7 @@ export function getDiscount() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.getElementById("productContainer")
+            const productContainer = document.createElement("div")
             productContainer.className = "col-md-4 col-12"
 
             const productDiv = document.createElement("div")
@@ -97,7 +97,7 @@ export function getDiscount() {
             cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
             addToCartBtn.className = "btn btn-outline-success"
-            addToCartBtn.innerHTML = " Köp "
+            addToCartBtn.innerHTML = " update "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
@@ -134,12 +134,12 @@ function showBothMenAndWomen(){
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.getElementById("productContainer")
-            productContainer.className = "col"
+/*             const productTable = document.createElement("table")
+ */            /* productContainer.className = "col-md-4 col-12" */
 
-            const productDiv = document.createElement("div")
-            productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
-
+            const productDiv = document.createElement("table")
+/*             productDiv.className = "card"
+ */
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct.image)
             image.className = "img-product"
@@ -148,19 +148,19 @@ function showBothMenAndWomen(){
             cartIcon.className = "bi bi-bag"
             const addToCartBtn = document.createElement("button")
             addToCartBtn.className = "btn btn-outline-success"
-            addToCartBtn.innerHTML = " Köp "
+            addToCartBtn.innerHTML = " update "
             // Funktion för att lägga i kundvagnen 
             addToCartBtn.addEventListener("click", function()  { 
                 saveToLocalStorage(selectedProduct)
                 numberOfProductsInCart()
             }) 
-            const title = document.createElement("h3")
+            const title = document.createElement("th")
             title.innerHTML = selectedProduct.name
-            const price = document.createElement("h3") 
+            const price = document.createElement("td") 
             price.innerHTML = selectedProduct.price - selectedProduct.discount + " kr"
 
-            productContainer.append(productDiv) 
-            productDiv.append(image)
+/*             productContainer.append(productDiv) 
+ */            productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
 
