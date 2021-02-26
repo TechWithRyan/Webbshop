@@ -1,4 +1,20 @@
 <?php 
+function getAllProcutsInStock (){
+    include_once('./../Class/database.php');
+    $database = new Database();
+
+    $query = $database->connection->prepare('SELECT ID, `name`, inStock FROM product;');
+    $query->execute();
+    $stockInfo = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    if (empty($stockInfo)) {
+        throw new exception('No Product in stock was found', 404);
+        exit;
+    }
+    return $stockInfo; 
+}
+
+
 
 function getAllFromUser($user) {
     error_log($user);
@@ -65,7 +81,7 @@ function createPurchaseDetail($purchaseID, $productID, $quantity, $sum){
 
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $qry = $database->connection->prepare('INSERT INTO purchasedetails (purchaseID, productID, quantity, sum) 
+        $qry = $database->connection->prepare('INSERT INTO orderDetails (orderID, productID, quantity, sum) 
                                 VALUES (:purchaseID, :productID, :quantity, :sum); 
                                 UPDATE product
                                 SET inStock = ifNull(inStock,0) - :quantity
