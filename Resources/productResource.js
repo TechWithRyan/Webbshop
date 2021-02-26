@@ -32,10 +32,10 @@ export function getAllCategory() {
             const selectedProduct = result[i]
             
             const productContainer = document.getElementById("productContainer")
-            productContainer.className = "col-md-4 col-12"
+            productContainer.className = "col"
 
             const productDiv = document.createElement("div")
-            productDiv.className = "card"
+            productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct + image)
@@ -84,10 +84,10 @@ export function getDiscount() {
             const selectedProduct = result[i]
             
             const productContainer = document.getElementById("productContainer")
-            productContainer.className = "col-md-4 col-12"
+            productContainer.className = "col"
 
             const productDiv = document.createElement("div")
-            productDiv.className = "card"
+            productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct.image)
