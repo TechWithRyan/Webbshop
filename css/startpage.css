@@ -63,7 +63,7 @@ input[type=text], select {
   }
 
 .menu-bar {
-    background-image: linear-gradient(-90deg, #ffffff, #ffffff);
+    background-image: linear-gradient(-90deg, #eeeed9, #ddd5d5);
     padding: 0em 1em;
     position: fixed;
     top: 0;
@@ -78,17 +78,22 @@ input[type=text], select {
 }
 .card {
     margin: 0.5em;
-    padding: 0.5em;
+    padding-top: 0.5em;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    width: 45%;
+    width: 30%;
 }
 footer {
+    background-image: linear-gradient(-90deg, #eeeed9, #ddd5d5);
     padding: 2em;
     height: auto;
     border-top: #000 2px solid;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
 }
 #productsInCart {
     display: flex;
@@ -97,8 +102,8 @@ footer {
     flex-wrap: wrap;
 }
 .img-product {
-    height: 60%;
-    width: 60%;
+    width: 90%;
+    height: auto;
 }
 .img-cart {
     height: 10%;

@@ -31,7 +31,7 @@ export function getAllCategory() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.createElement("div")
+            const productContainer = document.getElementById("productContainer")
             productContainer.className = "col-md-4 col-12"
 
             const productDiv = document.createElement("div")
@@ -83,7 +83,7 @@ export function getDiscount() {
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.createElement("div")
+            const productContainer = document.getElementById("productContainer")
             productContainer.className = "col-md-4 col-12"
 
             const productDiv = document.createElement("div")
@@ -134,11 +134,11 @@ function showBothMenAndWomen(){
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
-            const productContainer = document.createElement("div")
-            productContainer.className = "col-md-4 col-12"
+            const productContainer = document.getElementById("productContainer")
+            productContainer.className = "col"
 
             const productDiv = document.createElement("div")
-            productDiv.className = "card"
+            productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
 
             const image = document.createElement("img")
             image.setAttribute("src", "./img/products/" + selectedProduct.image)
