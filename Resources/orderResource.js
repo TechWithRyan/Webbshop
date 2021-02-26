@@ -1,4 +1,4 @@
-//import { getLogggedInUser } from './userResource.js'
+import { getLogggedInUser } from './userResource.js'
 import{ renderShippers } from './shipperResource.js'
 function getCart() {
     return JSON.parse(localStorage.getItem("localCart")) || [];
@@ -77,6 +77,11 @@ function renderOrders(result) {
         contentDiv.appendChild(price);
     }    
 }    
+let carItem = {
+    product: {
+
+    }, quantity:3
+};
 
 function renderNewsletterSubscribers(sub) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];

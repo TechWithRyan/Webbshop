@@ -4,7 +4,7 @@ function getAll() {
     include_once('./../Class/database.php');
     $database = new Database();
 
-    $query = $database->connection->prepare('SELECT * FROM Product;');
+    $query = $database->connection->prepare('SELECT * FROM Product;' /* SELECT ID, name, inStock FROM product; */);
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -20,7 +20,7 @@ function updateInStock($newnumber, $prodID) {
     $database = new Database();
 
     $query = <<<EOD
-    UPDATE product SET inStock = $newnumber WHERE productID = :produkt;
+    UPDATE product SET inStock = $newnumber WHERE ID = :product;
     EOD;
     $statement = $database->connection->prepare($query);
     $statement->execute(array(':produkt' => $prodID));

@@ -194,3 +194,5 @@ function numberOfProductsInCart() {
 }
 numberOfProductsInCart()
 
+console.log(numberOfProductsInCart.status)
+

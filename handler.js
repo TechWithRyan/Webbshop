@@ -29,7 +29,7 @@ function makeRequest(url, method, FormData, callback) {
 
 document.getElementById("men").addEventListener("click", getAllCategory);
 document.getElementById("women").addEventListener("click", getAllCategory)
-document.getElementById("barn").addEventListener("click", getAllCategory)
+document.getElementById("baby").addEventListener("click", getAllCategory)
 document.getElementById("sale").addEventListener("click", getDiscount)
 document.getElementById("newsletter-form").addEventListener("submit", sendNewsLetter)
 

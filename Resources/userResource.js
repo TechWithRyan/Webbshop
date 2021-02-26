@@ -16,6 +16,7 @@ export function getLogggedInUser(callback){
         if (result == false){
             console.log("not logged in")
             callback(result)
+            console.log(result)
         } else {
             callback(result)
         }
@@ -27,7 +28,6 @@ export async function login(event) {
     var password = document.getElementById("passwordInput").value
     makeRequest('./../API/recievers/userReciever.php?endpoint=login&username=' + username + '&password=' + password, 'GET', null, (user) => {
         if (user.status == 404){
-            
             alert("Det gick inte att logga in!");
         } else {
             localStorage.setItem("Current User", JSON.stringify(user));
@@ -36,6 +36,7 @@ export async function login(event) {
         }
     })
 }
+
 
 export function logout(user) {
     localStorage.removeItem("Current User", JSON.stringify(user));
@@ -79,6 +80,6 @@ export function registerNewUser() {
     data.append("street", street)
     data.append("endpoint", "addNew")
             
-    makeRequest('./../API/recievers/userReciever.php', 'POST', data, (result) => {
+    makeRequest('./../API/recievers/userReciever.php', 'POST', data, (_result) => {
     })        
 }

@@ -45,9 +45,7 @@
         <p>Tryck knappen för att logga ut</p>
         <button id="logout_btn">Logga ut</button>
     </div>
-   
-    
-    
+           
 <footer>
    
 </footer>

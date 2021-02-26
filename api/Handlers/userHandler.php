@@ -24,11 +24,12 @@ function getSpecific($uname, $pw){
     $database = new Database(); 
     $hashedPW = hash("md5", $pw);
 
-    //$database->bindValue(':email', $uname, PDO::PARAM_INT);
     $query = $database->connection->prepare('SELECT * FROM customer WHERE email = :email AND password = :password;');
     $query->execute(array(':email' => $uname, ':password' => $hashedPW));
-    $result = $query->fetch(PDO::FETCH_ASSOC);
-    //Använder fetch istället för fetchAll för att få ut usern utanför array av alla users
+    
+    $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+    /* echo json_encode($result);
+    exit;  */
 
     if (empty($result)) {
         throw new exception('No user found', 404);

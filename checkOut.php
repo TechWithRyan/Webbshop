@@ -38,7 +38,7 @@
         <h2>Slutför köp</h2>
     </div>
     <div class="checkOutForm">                     
-    <!-- <div id="checkoutField" id="userData">
+    <div id="checkoutField" id="userData">
         <h1>Förnamn</h1>
         <input type="text" id="fName">
         <h1>Efternamn</h1>
@@ -53,11 +53,11 @@
         <input type="text" id="country">
         <h1>Telefonnummer</h1>
         <input type="text" id="phone">
-        <h1>Username</h1>
+        <!-- <h1>Username</h1>
         <input type="text" id="usernameInput">
         <h1>Password</h1>
-        <input type="password" id="passwordInput">    
-    </div>   -->     
+        <input type="password" id="passwordInput">  -->   
+    </div>    
         <h3 style="text-align:center">Välj din fraktaltmethod:</h3>
         
     <div id="shippers">
