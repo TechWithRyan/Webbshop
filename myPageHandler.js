@@ -1,5 +1,5 @@
 import { getUserOrders } from './Resources/orderResource.js'
-//import {getLogggedInUser} from './Resources/userResource.js'
+import {getLogggedInUser} from './Resources/userResource.js'
 import {getAllOrders} from './Resources/orderResource.js'
 import {getAllSubscribers} from './Resources/orderResource.js'
 import {getAllChangeProducts} from './Resources/orderResource.js'

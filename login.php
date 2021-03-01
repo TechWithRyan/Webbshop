@@ -74,10 +74,9 @@
         <p>Tryck på knappen för att logga ut</p>
         <button id="logout_btn">Logga ut</button>
     </div>
+
 </main>
    
-    
-    
 <footer>
     <div class="container">
         <div class="row align-items-end">

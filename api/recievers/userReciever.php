@@ -23,9 +23,9 @@ try {
                 isset($_POST["country"]) &&
                 isset($_POST["street"])) {
                     include('./../Handlers/userHandler.php');
-                    include('./../Class/userClass.php');
+                    //include('./../Class/userClass.php');
 
-                    $user = new User($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
+                    //$user = new User($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
 
                     $result = registerNewUser(
                         $_POST["fName"],
@@ -92,7 +92,5 @@ try {
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
 }
-
-
 
 ?>

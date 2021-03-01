@@ -14,12 +14,13 @@ function makeRequest(url, method, FormData, callback) {
 }
 
 export function getAllShippers() {
-        event.preventDefault()
+        /* event.preventDefault() */
         makeRequest('./../API/recievers/shippersReciever.php?endpoint=getAllShippers', 'GET', null, (result) => {
-        if (result.status == 404){
-        } else {
-            renderShippers(result);     
-        }
+            if (result.status == 404){
+            } else {
+                renderShippers(result);     
+            }
+            console.log(result)
     })
 }
 
@@ -49,11 +50,14 @@ export function renderShippers(result) {
 
         let buttonDiv = document.createElement('p')
         buttonDiv.classList = 'buttonDiv'
+
         let choiceBtn = document.createElement('button')
         choiceBtn.classList = 'chooseShipper'
         choiceBtn.innerText = 'Välj'
         choiceBtn.addEventListener('click', function() {
             localStorage.setItem('shipperID', selectedShipper.shipperID)
+            alert('Du har vald ' + selectedShipper.name + ' vänligen betala att trycka BETALNINGEN')
+            window.location.href='checkOut.php';
         })
         buttonDiv.appendChild(choiceBtn);
 

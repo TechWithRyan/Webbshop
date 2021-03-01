@@ -1,4 +1,4 @@
-//import { getLogggedInUser } from './userResource.js'
+import { getLogggedInUser } from './userResource.js'
 import{ renderShippers } from './shipperResource.js'
 function getCart() {
     return JSON.parse(localStorage.getItem("localCart")) || [];
@@ -77,6 +77,11 @@ function renderOrders(result) {
         contentDiv.appendChild(price);
     }    
 }    
+let carItem = {
+    product: {
+
+    }, quantity:3
+};
 
 function renderNewsletterSubscribers(sub) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
@@ -248,12 +253,36 @@ function cartSort(userId, shipperID){
             })
         }
     })
-
+    
     let data = new FormData();
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
-    data.delete('sortedCart')
-    data.delete('endpoint')
+        data.delete('sortedCart')
+        data.delete('endpoint')
     })
 }
+
+    async function initSite() {
+    let allProcutsList = await getAllProcutsInStock()
+    console.log(value)
+    }
+
+    async function getAllProcutsInStock() {
+    let getAllProcutsInStock = await makeRequest("./../API/recievers/orderReciever.php?action=getOne", "GET")
+    return getAllProcutsInStock
+    }
+    
+    async function getOneProcutInStock(id) {
+
+        return "value"
+
+    }
+    async function makeRequest(url, method, body){
+        let response = await fetch(
+            url, {
+                method,
+                body
+            }
+        )
+    }

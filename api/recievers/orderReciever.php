@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-try {
+/* try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
     } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -68,6 +68,25 @@ try {
  
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
+} */
+
+try {
+if ($_SERVER["REQUEST_METHOD"] == "GET"){
+    if ($_GET["action"] == "getOne"){
+        include('./../Handlers/orderHandler.php');
+        $id = $_GET["ID"];
+        echo json_encode(array_search($id, array_column($stockInfo, 'ID')));        
+        exit;
+    }else if ($_GET["action"] == "getAllProcutsInStock"){
+        include('./../Handlers/orderHandler.php');
+        //$stockInfo = getAllProcutsInStock();
+        echo json_encode($stockInfo); 
+        exit;  
+    }
 }
- 
+    
+} catch(Exception $e2) {
+    echo json_encode(array('Message' => $e2->getMessage(), 'status' => $e2->getCode()));
+    exit;
+}
 ?>
