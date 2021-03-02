@@ -1,6 +1,24 @@
 <?php
 session_start();
- 
+
+try {
+    if($_POST['endpoint'] == 'createOrder') {
+        $order = json_decode($_POST['sortedCart'], true);
+        include('./../Handlers/orderHandler.php');
+        $result = createPurchase($order["userID"], $order["shipperID"], $order["date"], $order["sum"]); 
+                 for($i = 0; $i < sizeof($order["details"]); $i++){
+            createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
+        }
+        echo json_encode($order["details"][1]["productID"]);
+    } else {
+        throw new Exception('Not a valid endpoint', 501);
+    }
+   
+} catch(Exception $e) {
+    echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
+    exit;
+}
+
 /* try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
@@ -70,23 +88,4 @@ session_start();
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
 } */
 
-try {
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
-    if ($_GET["action"] == "getOne"){
-        include('./../Handlers/orderHandler.php');
-        $id = $_GET["ID"];
-        echo json_encode(array_search($id, array_column($stockInfo, 'ID')));        
-        exit;
-    }else if ($_GET["action"] == "getAllProcutsInStock"){
-        include('./../Handlers/orderHandler.php');
-        //$stockInfo = getAllProcutsInStock();
-        echo json_encode($stockInfo); 
-        exit;  
-    }
-}
-    
-} catch(Exception $e2) {
-    echo json_encode(array('Message' => $e2->getMessage(), 'status' => $e2->getCode()));
-    exit;
-}
 ?>

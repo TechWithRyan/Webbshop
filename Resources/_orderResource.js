@@ -1,4 +1,4 @@
-//import { getLogggedInUser } from './userResource.js'  // vi kör G krav
+import { getLogggedInUser } from './userResource.js'
 import{ renderShippers } from './shipperResource.js'
 
 function getCart() {
@@ -7,6 +7,18 @@ function getCart() {
   function getShipperID() {
     return JSON.parse(localStorage.getItem("shipperID")) || [];
   }
+  async function initSite() {
+    let allProcutsList = await getAllProcutsInStock()
+    console.log(value)
+    }
+
+    async function getAllProcutsInStock() {
+    let getAllProcutsInStock = await makeRequest("./../API/recievers/orderReciever.php?action=getOne", "GET")
+    return getAllProcutsInStock
+    }
+        async function getOneProcutInStock(id) {
+        return "value"
+    }
 
 function makeRequest(url, method, data, callback) {
     fetch(url, {
@@ -16,10 +28,35 @@ function makeRequest(url, method, data, callback) {
         return data.json()
     }).then((result) => {
         callback(result);
+        console.log(result)
     }).catch((err) => {
         console.log("Error: ", err)
     })
 }
+
+export function getAllOrders() {
+    makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrders', 'GET', null, (result) => {
+        if (result.status == 404){
+        } else {
+            renderOrders(result);     
+        }
+    })
+}
+
+export function makeOrder(){
+    getLogggedInUser((user) => {        
+        cartSort(user.userID, JSON.stringify(getShipperID()))
+    })
+}
+
+/* async function makeRequest(url, method, body){
+    let response = await fetch(
+        url, {
+            method,
+            body
+        }
+    )
+} */
 
 export function getUserOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllFromUser', 'GET', null, (result) => {
@@ -29,7 +66,6 @@ export function getUserOrders() {
         }
     })
 }
-
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
     let order = result;
@@ -78,6 +114,11 @@ function renderOrders(result) {
         contentDiv.appendChild(price);
     }    
 }    
+let carItem = {
+    product: {
+
+    }, quantity:3
+};
 
 function renderNewsletterSubscribers(sub) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
@@ -169,9 +210,6 @@ function renderProducts(product) {
         contentDiv.appendChild(productButton);
     }    
 }  
-export function makeOrder(){
-       cartSort(JSON.stringify(getCart()), JSON.stringify(getShipperID()))
-    };
 
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
@@ -225,19 +263,16 @@ function cartSort(userId, shipperID){
     }
 
     let cart = getCart()
-    console.log(cart)
-    
+
     cart.forEach((product) => {
         let exists = false
         order.sum += (Number)(product.price)
-        
+
         order.details.forEach((orderDetail) => {
             if(orderDetail.productID == product.productID) {
-                quantity = 1; //test
                 orderDetail.quantity++
                 orderDetail.sum += (Number)(product.price)
-                
-                console.log(orderDetail)
+
                 exists = true
             }
         })
@@ -250,12 +285,15 @@ function cartSort(userId, shipperID){
             })
         }
     })
-
+    
     let data = new FormData();
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
-    data.delete('sortedCart')
-    data.delete('endpoint')
+        data.delete('sortedCart')
+        data.delete('endpoint')
     })
-};
+}
+
+    
+    

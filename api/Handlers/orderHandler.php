@@ -1,4 +1,5 @@
 <?php 
+
 function getAllProcutsInStock (){
     include_once('./../Class/database.php');
     $database = new Database();
@@ -42,29 +43,27 @@ function getAllFromUser($user) {
     }
     return $result; 
 }
+
+
+
 function createPurchase($userID, $shipperID, $date, $sum){
-    // include_once('./../Class/userClass.php');
+    $userID = 1; //test value, det måste bort 
+    //include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
     $database = new Database();
     $datum = $date;
     
-
     try {
-
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $qry = $database->connection->prepare('INSERT INTO purchase (userID, shipperID, `date`, `sum`)
-         VALUES (:userID, :shipperID, :datum, :sum);');
-
-        $qry->execute(array(':userID' => $userID, 
+        $qry = $database->connection->prepare('INSERT INTO `order` (customerID, shipperID, `date`, `sum`)
+         VALUES (:customerID, :shipperID, :datum, :sum);');
+        $qry->execute(array(':customerID' => $userID, 
                             ':shipperID' => $shipperID,     
                             ':datum' => $datum, 
                             ':sum' => $sum));
-
                             $id = $database->connection->lastInsertId();
                             return $id;
-        
-                           /*  $result = $query->fetch(PDO::FETCH_ASSOC); */
+                            //$result = $query->fetch(PDO::FETCH_ASSOC);
         
     } catch(PDOException $e) {
         error_log($e->getMessage());
@@ -142,6 +141,7 @@ function getAllSubscribers() {
     }
     return $result; 
 }
+
 
 function getAllChangeProducts() {
     include_once('./../Class/database.php');

@@ -7,7 +7,7 @@ try {
         if($_GET['endpoint'] == 'getAllShippers') {
 
             include('./../Handlers/shipperHandler.php');
-            $shipper = $_SESSION['shipper'];   // <---- här vi måste ändra, det func ta vilken value
+            //$shipper = $_SESSION['shipper']; // <---- här vi måste ändra, det func ta vilken value
             $result = getAllShippers();
             echo json_encode($result); 
 

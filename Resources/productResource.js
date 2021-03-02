@@ -27,7 +27,6 @@ export function getAllCategory() {
     makeRequest('./../API/recievers/categoryReciever.php?endpoint=getSpecific&categorytoSend=' + categorytoSend , 'GET', null, (result) => {
         const showProducts = document.getElementById("allProducts")
         showProducts.innerHTML = "" 
-        
 
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
@@ -56,6 +55,7 @@ export function getAllCategory() {
             title.innerHTML = selectedProduct.name
             const price = document.createElement("h3") 
             price.innerHTML = selectedProduct.price - selectedProduct.discount + " kr"
+            const inStock = document.createElement("h3")
 
             productContainer.append(productDiv) 
             productDiv.append(image)
@@ -128,11 +128,11 @@ export function getDiscount() {
 
 function showBothMenAndWomen(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
-    for (let i = 0; i < result.length; i++){
-        const showProducts = document.getElementById("allProducts")
-        showProducts.innerHTML = "" 
-        console.log(result);
-
+        for (let i = 0; i < result.length; i++){
+            const showProducts = document.getElementById("allProducts")
+            showProducts.innerHTML = "" 
+            //console.log(result[i]['inStock']);
+        
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
@@ -196,5 +196,4 @@ function numberOfProductsInCart() {
 }
 numberOfProductsInCart()
 
-console.log(numberOfProductsInCart.status)
 
