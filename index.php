@@ -27,11 +27,8 @@
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
-
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.html"> About <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
-
-
+                    <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
@@ -45,13 +42,17 @@
 </div>
 </header>
 
-<!-- <hero class="img-fluid"><img src="img/best-vintage-thrift-stores-sydney.jpg"></hero> -->
 
 <main class="container">
   
-  <h1>Hello Retro Lovers</h1>
+  <div class="hero"><img class="img-fluid" src="img/best-vintage-thrift-stores-sydney.jpg" alt="Route 66 retro webshop"></div>
+  <br>
+  <div class="mt-4 heading">
+    <h1>Hello Retro Lovers</h1>
+  </div>
     <div class="row">
       <div id="productContainer">
+        <div id="men"></div>
         <div id="allProducts"></div>
       </div>
     </div>
@@ -61,15 +62,12 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-            <h3>Get our newsletter</h3>
+            <h3>Prenumerera på vårt nyhetsbrev</h3>
               <form class="newsletterField" id ="newsletter-form">
-                <label for="firstname"></label>
                 <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
-                <label for="lastname"></label>
                 <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
-                <label for="email"></label>
                 <input type="text" name="email" id="email" placeholder="E-post">
-                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Sign up</button>
+                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
               </form>
         </div>
       </div>

@@ -4,38 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Retro</title> 
+    <title>Route 66 webshop</title>
     <link rel="stylesheet" href="./style/mainStyle.css">
     <link rel="stylesheet" href="./style/checkOutStyle.css">
-    <link rel="stylesheet" href="./style/shipperStyle.css">
-    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="./style/shipperStyle.css"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/startpage.css">
     <script defer type ="module" src="./checkOutHandler.js"></script>
     <script defer type ="module" src="./shippersHandler.js"></script>
+    <script defer type="module" src="./handler.js"></script>
 </head>
 <body>
+
 <header>
-    <div class="headTitle">
-        <a href="index.php"><h1 class="textTitle">Retro</h1></a>
+<div class="header">
+    <div class="menu-bar">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.php">Route 66</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>
+                  </li>
+                </ul>
+          </nav>
     </div>
+</div>
 </header>
     
 
-<nav> 
-    <div class="loginCartWrap">
-    <div class="loginText">
-        <a href="login.php">Inloggning</a>
-    </div>
-    <div class="myPageText">
-        <a href="myPage.php">Mina sidor</a>
-    </div>
-    <div class="cartField">
-    <div id="numberOfItemsInCart"></div>
-        <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
-    </div>
-    </div>
-</nav>   
-    <div class="categoryTitle">
-        <h2>Slutför köp</h2>
+<main>
+    <div class="mt-4 heading">
+        <h1>Slutför köp</h1>
     </div>
     <div class="checkOutForm">                     
     <div id="checkoutField" id="userData">
@@ -57,30 +72,37 @@
         <input type="text" id="usernameInput">
         <h1>Password</h1>
         <input type="password" id="passwordInput">  -->   
-    </div>    
-        <h3 style="text-align:center">Välj din fraktaltmethod:</h3>
+    </div>  
+</div>
+    <div class="mt-4 heading">
+        <h1>Fraktmetod:</h1>
+    </div>  
+        
         
     <div id="shippers">
-        <button id="getShippers">Klicka här för att välja</button>
+        <button class="btn btn-outline-success" id="getShippers">Klicka för att välja fraktmetod</button>
     </div>
-        <button id="checkoutSubmit">Betalningen</button>
+    <div class="mt-4 heading">
+        <h1>Betalning:</h1>
+    </div> 
+        <button class="btn btn-outline-success" id="checkoutSubmit">Till betalning</button>
     </div>
+    </main>
     <footer>
-    <br> <br>
-    <form class="newsletterField" id ="newsletter-form">
-    Please sign up for our newsletters
-    <br>
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email">
-    
-    <label for="firstname">Förnamn</label>
-    <input type="text" name="firstname" id="firstname">
-    
-    <label for="lastname">Efternamn</label>
-    <input type="text" name="lastname" id="lastname">
-    <button type="submit" id="newsLetterBtn">Skicka</button>
-    </form>
-    <br> 
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h3>Prenumerera på vårt nyhetsbrev</h3>
+              <form class="newsletterField" id ="newsletter-form">
+                <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
+                <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
+                <input type="text" name="email" id="email" placeholder="E-post">
+                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
+              </form>
+        </div>
+      </div>
+    </div>
 </footer>
+
 </body>
 </html>
