@@ -29,7 +29,7 @@
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
+                    <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
@@ -44,7 +44,9 @@
 </header>
 
 <main class="container">
-    <h3>Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i></h3> 
+<div class="mt-4 heading">
+    <h1>Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i></h1> 
+</div>
     <div class="col">
     
         <div id="productsInCart"></div>
@@ -54,20 +56,17 @@
 </div>
 </main>
 
-<footer>
+<footer class="fixed-bottom">
     <div class="container">
-      <div class="row align-items-end">
+      <div class="row">
         <div class="col-12">
-            <h3>Get our newsletter</h3>
-          <form class="newsletterField" id ="newsletter-form">
-              <label for="firstname"></label>
+            <h3>Prenumerera på vårt nyhetsbrev</h3>
+              <form class="newsletterField" id ="newsletter-form">
                 <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
-                <label for="lastname"></label>
                 <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
-                <label for="email"></label>
                 <input type="text" name="email" id="email" placeholder="E-post">
-                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Sign up</button>
-          </form>
+                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
+              </form>
         </div>
       </div>
     </div>

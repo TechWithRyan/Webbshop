@@ -1,6 +1,9 @@
 .checkOutForm {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* margin: 0 auto; */
     text-align: center;
+    width: 100%;
 }
 
 #checkoutField > h1 {
@@ -17,11 +20,13 @@ input[type=text] {
 }
 
 #shippers {
+    width: 80%;
     text-align: center;
 }
 
 .categoryTitle {
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
+    margin: 0.5em;
 }
 

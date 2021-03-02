@@ -39,7 +39,7 @@ export function renderShippers(result) {
         shipperID.innerText = selectedShipper.shipperID;
 
 
-        let name = document.createElement('p');
+        let name = document.createElement('h3');
         name.classList = 'shipperName';
         name.innerText = selectedShipper.name;
 
@@ -48,15 +48,15 @@ export function renderShippers(result) {
         info.classList = 'shipperInfo';
         info.innerText = selectedShipper.info;
 
-        let buttonDiv = document.createElement('p')
-        buttonDiv.classList = 'buttonDiv'
+        let buttonDiv = document.createElement('button')
+        buttonDiv.className = 'btn'
 
         let choiceBtn = document.createElement('button')
-        choiceBtn.classList = 'chooseShipper'
+        choiceBtn.className = 'btn btn-outline-success'
         choiceBtn.innerText = 'Välj'
         choiceBtn.addEventListener('click', function() {
             localStorage.setItem('shipperID', selectedShipper.shipperID)
-            alert('Du har vald ' + selectedShipper.name + ' vänligen betala att trycka BETALNINGEN')
+            alert('Du har valt ' + selectedShipper.name + ' vänligen betala genom att trycka Till betalning')
             window.location.href='checkOut.php';
         })
         buttonDiv.appendChild(choiceBtn);
