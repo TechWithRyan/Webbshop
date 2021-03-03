@@ -56,8 +56,10 @@ export function renderShippers(result) {
         choiceBtn.innerText = 'Välj'
         choiceBtn.addEventListener('click', function() {
             localStorage.setItem('shipperID', selectedShipper.shipperID)
-            alert('Du har valt ' + selectedShipper.name + ' vänligen betala genom att trycka Till betalning')
-            window.location.href='checkOut.php';
+            alert('Du har valt ' + selectedShipper.name + ' vänligen betala genom att trycka slutför beställning')
+            /* window.location.href='checkOut.php'; */ 
+            document.getElementById("shippers").style.display='none';
+            name.innerText = selectedShipper.name;
         })
         buttonDiv.appendChild(choiceBtn);
 
