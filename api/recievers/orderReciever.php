@@ -2,10 +2,17 @@
 session_start();
 
 try {
+    
+   /*  if($_GET['endpoint'] == 'checkInStock') {
+        include('./../Handlers/orderHandler.php');
+        $result = checkInStock();
+        echo json_encode($result);
+     
+    } */
     if($_POST['endpoint'] == 'createOrder') {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
-        $result = createPurchase($order["userID"], $order["shipperID"], $order["date"], $order["sum"]); 
+        $result = createPurchase($order["userId"], $order["shipperID"], $order["date"], $order["sum"]); 
                  for($i = 0; $i < sizeof($order["details"]); $i++){
             createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
         }

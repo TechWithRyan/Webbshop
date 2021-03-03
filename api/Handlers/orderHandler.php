@@ -46,7 +46,7 @@ function getAllFromUser($user) {
 
 
 
-function createPurchase($userID, $shipperID, $date, $sum){
+function createPurchase($userId, $shipperID, $date, $sum){
     $userID = 1; //test value, det måste bort 
     //include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
@@ -54,10 +54,16 @@ function createPurchase($userID, $shipperID, $date, $sum){
     $datum = $date;
     
     try {
+        $sql_array = array(':customerID' => $userId, 
+        ':shipperID' => $shipperID,     
+        ':datum' => $datum, 
+        ':sum' => $sum);
+        echo json_encode($sql_array);
+        exit;
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $qry = $database->connection->prepare('INSERT INTO `order` (customerID, shipperID, `date`, `sum`)
          VALUES (:customerID, :shipperID, :datum, :sum);');
-        $qry->execute(array(':customerID' => $userID, 
+        $qry->execute(array(':customerID' => $userId, 
                             ':shipperID' => $shipperID,     
                             ':datum' => $datum, 
                             ':sum' => $sum));

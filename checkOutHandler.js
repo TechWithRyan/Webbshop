@@ -15,7 +15,7 @@ document.getElementById("checkoutSubmit").addEventListener("click", buttonPaymen
 
 function buttonPayment(){
     makeOrder();
-    afterOrderAlert();
+    //afterOrderAlert();
 };
 
 function afterOrderAlert(){

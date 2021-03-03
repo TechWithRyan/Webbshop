@@ -30,6 +30,15 @@ export function getUserOrders() {
     })
 }
 
+export function checkInStock() {
+    makeRequest('./../API/recievers/orderReciever.php?endpoint=checkInStock', 'GET', null, (checkInStock) => {
+        if (checkInStock.status == 404){
+        } else {
+            renderOrders(checkInStock);     
+        }
+    })
+}
+
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
     let order = result;
@@ -38,7 +47,7 @@ function renderOrders(result) {
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';
     MainOrderDiv.appendChild(orderDiv);
-
+    
     for (let i = 0; i < order.length; i++) {
         let selectedOrder = order[i];
         let contentDiv = document.createElement('div');
@@ -47,29 +56,29 @@ function renderOrders(result) {
         let purchaseID = document.createElement('p');
         purchaseID.classList = 'text';
         purchaseID.innerText = 'orderID' + ' ' + selectedOrder.purchaseID + ',';
-
+        
         let date = document.createElement('p')
         date.classList = 'text';
         date.innerText = 'datum' + ' ' + selectedOrder.date + ',';
-
+        
         let sum = document.createElement('p');
         sum.classList = 'text';
         sum.innerText = 'Totalbelopp' + ' ' + selectedOrder.sum + 'kr' + ',';
-
+        
         let quantity = document.createElement('p');
         quantity.classList = 'text';
         quantity.innerText = 'Kvantitet' + ' ' + selectedOrder.quantity + ',';
-
+        
         let name = document.createElement('p');
         name.classList = 'text';
         name.innerText = 'Produkt:' + ' ' + selectedOrder.name + ',';
-
+        
         let price = document.createElement('p');
         price.classList = 'text';
         price.innerText = 'Pris' + ' ' + selectedOrder.price + 'kr';
-
+        
         orderDiv.appendChild(contentDiv);
-
+        
         contentDiv.appendChild(purchaseID);
         contentDiv.appendChild(date);
         contentDiv.appendChild(sum);
@@ -87,7 +96,7 @@ function renderNewsletterSubscribers(sub) {
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';
     MainOrderDiv.appendChild(orderDiv);
-
+    
     for (let i = 0; i < order.length; i++) {
         let selectedOrder = order[i];
         let contentDiv = document.createElement('div');
@@ -96,21 +105,21 @@ function renderNewsletterSubscribers(sub) {
         let subscriptionID = document.createElement('p');
         subscriptionID.classList = 'text';
         subscriptionID.innerText = 'subscriptionID' + ' ' + selectedOrder.subscriptionID + ',';
-
+        
         let fName = document.createElement('p')
         fName.classList = 'text';
         fName.innerText = 'Namn' +':'+ ' ' + selectedOrder.fName + ',';
-
+        
         let lName = document.createElement('p');
         lName.classList = 'text';
         lName.innerText = 'Efternamn' +':'+ ' ' + selectedOrder.lName + ',';
-
+        
         let email = document.createElement('p');
         email.classList = 'text';
         email.innerText = 'email' +':'+ ' ' + selectedOrder.email;
-
+        
         orderDiv.appendChild(contentDiv);
-
+        
         contentDiv.appendChild(subscriptionID);
         contentDiv.appendChild(fName);
         contentDiv.appendChild(lName);
@@ -126,7 +135,7 @@ function renderProducts(product) {
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';
     MainOrderDiv.appendChild(orderDiv);
-
+    
     for (let i = 0; i < order.length; i++) {
         let selectedOrder = order[i];
         let contentDiv = document.createElement('div');
@@ -135,15 +144,15 @@ function renderProducts(product) {
         let productID = document.createElement('p');
         productID.classList = 'text';
         productID.innerText = 'produktID' + ' ' + selectedOrder.productID + ',';
-
+        
         let name = document.createElement('p')
         name.classList = 'text';
         name.innerText = 'Namn' +':'+ ' ' + selectedOrder.name + ',';
-
+        
         let inStock = document.createElement('p');
         inStock.classList = 'text';
         inStock.innerText = 'lagerSaldo' +':'+ ' ' + selectedOrder.inStock;
-
+        
         let productInput = document.createElement('input');
         productInput.classList = 'productInput';
         productInput.innerText = 'ändra antal';
@@ -170,9 +179,9 @@ function renderProducts(product) {
     }    
 }  
 export function makeOrder(){
-       cartSort(JSON.stringify(getCart()), JSON.stringify(getShipperID()))
-    };
-
+    cartSort(JSON.stringify(getShipperID()), JSON.stringify(getShipperID()))
+};
+/* JSON.stringify(getCart()) */
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
         if (result.status == 404){
@@ -204,14 +213,14 @@ export function getAllChangeProducts() {
 
 function formatDate(date) {
     var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+    
     if (month.length < 2) 
-        month = '0' + month;
+    month = '0' + month;
     if (day.length < 2) 
-        day = '0' + day;
+    day = '0' + day;
     return [year, month, day].join('-');
 }
 
@@ -223,7 +232,7 @@ function cartSort(userId, shipperID){
         date: formatDate(new Date().toDateString()),
         details: []
     }
-
+    
     let cart = getCart()
     console.log(cart)
     
@@ -232,11 +241,12 @@ function cartSort(userId, shipperID){
         order.sum += (Number)(product.price)
         
         order.details.forEach((orderDetail) => {
+            //console.log(result);
             if(orderDetail.productID == product.productID) {
                 //quantity = 1; //test
                 orderDetail.quantity++
                 orderDetail.sum += (Number)(product.price)
-                
+                console.log(order)
                 console.log(orderDetail)
                 exists = true
             }
@@ -255,6 +265,7 @@ function cartSort(userId, shipperID){
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
+    //console.log(result)
     data.delete('sortedCart')
     data.delete('endpoint')
     })
