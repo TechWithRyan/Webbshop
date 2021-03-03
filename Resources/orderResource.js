@@ -233,7 +233,7 @@ function cartSort(userId, shipperID){
         
         order.details.forEach((orderDetail) => {
             if(orderDetail.productID == product.productID) {
-                quantity = 1; //test
+                //quantity = 1; //test
                 orderDetail.quantity++
                 orderDetail.sum += (Number)(product.price)
                 
