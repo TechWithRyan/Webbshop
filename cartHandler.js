@@ -31,7 +31,7 @@ function showProductsInCart() {
         trashIcon.className = "bi bi-trash"
         const deleteProductBtn = document.createElement("button")
         deleteProductBtn.className = "btn btn-outline-danger"
-        deleteProductBtn.innerHTML = ""
+        deleteProductBtn.innerHTML = "Ta bort"
         deleteProductBtn.num = i;
         deleteProductBtn.addEventListener("click", function(){
             removeProductFromCart(this.num)

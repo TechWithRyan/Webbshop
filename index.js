@@ -1,6 +1,6 @@
 //import { getAllCategory } from './js/productResource.js'
 import { getDiscount } from './js/productResource.js'
-//import {sendNewsLetter} from './js/newsLetterResource.js'
+import {sendNewsLetter} from './js/newsLetterResource.js'
 
 var iKundvagn = [];
 

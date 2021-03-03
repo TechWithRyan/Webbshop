@@ -13,10 +13,11 @@ class Database {
         try {
             $this->connection = new PDO($dsn, $user, $password);
             $this->connection->exec('set names utf8');
+            error_log("created DB");
 
-            if ($this->connection->connect_error) {
+            /* if ($this->connection->connect_error) {
                 die("Connection failed: " . $this->connection->connect_error);
-            }
+            } */
             
         } catch(PDOException $e) {
             error_log($e->getMessage());
