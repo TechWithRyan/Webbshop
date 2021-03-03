@@ -41,9 +41,32 @@
         <button id="login_btn">Login</button>
     </div>
 
-    <div id="logoutDiv">
-        <p>Tryck knappen för att logga ut</p>
-        <button id="logout_btn">Logga ut</button>
+<footer class="fixed-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <h3>Prenumerera på vårt nyhetsbrev</h3>
+              <!-- <form class="newsletterField" id ="newsletter-form">
+                <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
+                <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
+                <input type="text" name="email" id="email" placeholder="E-post">
+                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
+              </form> -->
+              <form class="newsletterField" id ="newsletter-form">
+        Prenumerera på vårt nyhetsbrev: 
+        <br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        
+        <label for="firstname">Förnamn</label>
+        <input type="text" name="firstname" id="firstname">
+        
+        <label for="lastname">Efternamn</label>
+        <input type="text" name="lastname" id="lastname">
+        <button type="submit" id="newsLetterBtn">Skicka</button>
+    </form>
+        </div>
+      </div>
     </div>
    
     

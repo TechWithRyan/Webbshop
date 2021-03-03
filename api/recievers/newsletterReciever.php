@@ -4,14 +4,9 @@ try {
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    
-
         include('./../Handlers/newsletterHandler.php');
         $result = postNewsletter($_POST['email'], $_POST['firstname'], $_POST['lastname']);
         echo json_encode($result); 
-
-    
-
 
 } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 

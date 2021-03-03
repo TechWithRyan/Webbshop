@@ -29,6 +29,6 @@ function makeRequest(url, method, FormData, callback) {
 //document.getElementById("women").addEventListener("click", getAllCategory)
 //document.getElementById("barn").addEventListener("click", getAllCategory)
 //document.getElementById("sale").addEventListener("click", getDiscount)
-//document.getElementById("newsletter-form").addEventListener("submit", sendNewsLetter)
+document.getElementById("newsletter-form").addEventListener("submit", sendNewsLetter)
 
 

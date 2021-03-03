@@ -1,5 +1,6 @@
-//import { getLogggedInUser } from './userResource.js'
+//import { getLogggedInUser } from './userResource.js'  // vi kör G krav
 import{ renderShippers } from './shipperResource.js'
+
 function getCart() {
     return JSON.parse(localStorage.getItem("localCart")) || [];
   }
@@ -169,10 +170,8 @@ function renderProducts(product) {
     }    
 }  
 export function makeOrder(){
-    getLogggedInUser((user) => {        
-        cartSort(user.userID, JSON.stringify(getShipperID()))
-    })
-}
+       cartSort(JSON.stringify(getCart()), JSON.stringify(getShipperID()))
+    };
 
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
@@ -226,16 +225,23 @@ function cartSort(userId, shipperID){
     }
 
     let cart = getCart()
-
+    console.log(cart)
+    
     cart.forEach((product) => {
         let exists = false
         order.sum += (Number)(product.price)
-
+        
         order.details.forEach((orderDetail) => {
             if(orderDetail.productID == product.productID) {
                 orderDetail.quantity++
                 orderDetail.sum += (Number)(product.price)
-
+                //order.quantity = order.details[0].quantity; //test
+                
+                console.log(orderDetail)
+                console.log(order)
+                console.log(product)
+                console.log(order.details[0].quantity)
+                console.log(order.quantity)
                 exists = true
             }
         })
@@ -256,4 +262,4 @@ function cartSort(userId, shipperID){
     data.delete('sortedCart')
     data.delete('endpoint')
     })
-}
+};

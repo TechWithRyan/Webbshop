@@ -1,7 +1,25 @@
 <?php
 session_start();
- 
+
 try {
+    if($_POST['endpoint'] == 'createOrder') {
+        $order = json_decode($_POST['sortedCart'], true);
+        include('./../Handlers/orderHandler.php');
+        $result = createPurchase($order["userId"], $order["shipperID"], $order["date"], $order["sum"], $order["quantity"]); 
+                 for($i = 0; $i < sizeof($order["details"]); $i++){
+            createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
+        }
+        echo json_encode($order["details"][1]["productID"]);
+    } else {
+        throw new Exception('Not a valid endpoint', 501);
+    }
+   
+} catch(Exception $e) {
+    echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
+    exit;
+}
+
+/* try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
     } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -68,6 +86,6 @@ try {
  
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
-}
- 
+} */
+
 ?>
