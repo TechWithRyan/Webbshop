@@ -131,7 +131,7 @@ function getAll(){
         //console.log(result[0]['ID']);
         for (let i = 0; i < result.length; i++){
             
-            console.log(result.length[i]['inStock']);
+            console.log(result.length[i]);
         }
     })
 };

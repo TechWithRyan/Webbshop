@@ -178,9 +178,9 @@ function renderProducts(product) {
         contentDiv.appendChild(productButton);
     }    
 }  
-export function makeOrder(){
+/* export function makeOrder(){
     cartSort(JSON.stringify(getShipperID()), JSON.stringify(getShipperID()))
-};
+}; */
 /* JSON.stringify(getCart()) */
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
