@@ -20,7 +20,7 @@ function buttonPayment(){
 
 function afterOrderAlert(){
     
-    alert("Tack för ditt köp! Välkommen åter!!!");
+    alert("Tack för ditt köp! Välkommen åter!");
     window.location.href='index.php';
  
 }

@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/startpage.css">
+    <link rel="stylesheet" href="style/startpage.css">
     <script defer type ="module" src="./checkOutHandler.js"></script>
     <script defer type ="module" src="./shippersHandler.js"></script>
     <script defer type="module" src="./handler.js"></script>
@@ -26,7 +26,7 @@
     <div class="menu-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.php">Route 66</a>
+            <a class="navbar-brand" href="index.php"><img src="img/route66color.svg" height="48" width="48" alt="Route 66 Retro shop"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -49,9 +49,22 @@
     
 
 <main>
-    <div class="mt-4 heading">
-        <h1>Slutför köp</h1>
+
+<div class="mt-4 heading">
+<h1>Slutför köp</h1>
+</div>
+
+<div class="mt-4 heading">
+<h2>Fraktmetod:</h2>
+</div> 
+<div id="shippers">
+        <button class="btn btn-outline-success" id="getShippers">Klicka för att välja fraktmetod</button>
     </div>
+
+    <div class="mt-4 heading">
+<h2>Leveransadress</h2>
+</div>
+
     <div class="checkOutForm">                     
     <div id="checkoutField" id="userData">
         <h1>Förnamn</h1>
@@ -76,18 +89,12 @@
         <input type="password" id="passwordInput">  -->   
     </div>  
 </div>
+                
+
     <div class="mt-4 heading">
-        <h1>Fraktmetod:</h1>
-    </div>  
-        
-        
-    <div id="shippers">
-        <button class="btn btn-outline-success" id="getShippers">Klicka för att välja fraktmetod</button>
-    </div>
-    <div class="mt-4 heading">
-        <h1>Betalning:</h1>
+        <h2>Betalning:</h2>
     </div> 
-        <button class="btn btn-outline-success" id="checkoutSubmit">Till betalning</button>
+        <button class="btn btn-outline-success" id="checkoutSubmit">Slutför beställning</button>
     </div>
     </main>
     <footer>
