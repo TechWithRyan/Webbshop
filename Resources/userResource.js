@@ -26,11 +26,11 @@ export function getLogggedInUser(callback){
 export async function login(event) {
     var username = document.getElementById("usernameInput").value
     var password = document.getElementById("passwordInput").value
-    makeRequest('./../API/recievers/userReciever.php?endpoint=login&username=' + username + '&password=' + password, 'GET', null, (user) => {
-        if (user.status == 404){
+    makeRequest('./../API/recievers/userReciever.php?endpoint=login&username=' + username + '&password=' + password, 'GET', null, (customer) => {
+        if (customer.status == 404){
             alert("Det gick inte att logga in!");
         } else {
-            localStorage.setItem("Current User", JSON.stringify(user));
+            localStorage.setItem("Current User", JSON.stringify(customer));
             alert("Du är inloggad!");
             window.location.href='index.php';
         }
@@ -38,9 +38,9 @@ export async function login(event) {
 }
 
 
-export function logout(user) {
-    localStorage.removeItem("Current User", JSON.stringify(user));
-    makeRequest('./../API/recievers/userReciever.php?endpoint=logout', 'GET', null, (user) => {
+export function logout(customer) {
+    localStorage.removeItem("Current User", JSON.stringify(customer));
+    makeRequest('./../API/recievers/userReciever.php?endpoint=logout', 'GET', null, (customer) => {
     })
     alert("Du har loggat ut!")
 }
@@ -49,10 +49,10 @@ export function logout(user) {
 export function getSpecific(event) {
     var username = document.getElementById("usernameInput").value
     var password = document.getElementById("passwordInput").value
-    makeRequest('./../API/recievers/userReciever.php?endpoint=getSpecific&username=' + username + '&password=' + password, 'GET', null, (user) => {
-        if (user.status == 404){
+    makeRequest('./../API/recievers/userReciever.php?endpoint=getSpecific&username=' + username + '&password=' + password, 'GET', null, (customer) => {
+        if (customer.status == 404){
         } else {
-            console.log(user)            
+            console.log(customer)            
         }
     })
 }
@@ -80,6 +80,6 @@ export function registerNewUser() {
     data.append("street", street)
     data.append("endpoint", "addNew")
             
-    makeRequest('./../API/recievers/userReciever.php', 'POST', data, (_result) => {
+    makeRequest('./../API/recievers/userReciever.php', 'POST', data, (result) => {
     })        
 }

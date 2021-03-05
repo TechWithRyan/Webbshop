@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style/startpage.css">
     <link rel="stylesheet" href="style/mainStyle.css">
-    <script defer type="module" src="./handler.js"></script>
+    <script defer type ="module" src="./myPageHandler.js"></script>
 
 </head>
 <body>
@@ -51,7 +51,10 @@
     <div class="mt-4 heading">
       <h1>Mina beställningar</h1>
     </div>
-    
+    <div class="cartField">
+            <div id="numberOfItemsInCart"></div>
+            <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
+        </div>
     <div class="MainOrderDiv"></div>
 
 </main>

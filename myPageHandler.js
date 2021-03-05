@@ -7,19 +7,20 @@ import {getAllChangeProducts} from './Resources/orderResource.js'
 checkAdminStatus();
 
 function checkAdminStatus(){
-    getLogggedInUser((user) => {
-        if (user.isAdmin == 1) {
+    getLogggedInUser((customer) => {
+        if (customer.isAdmin == 1) {
             // admin
             getAllOrders();
             getAllSubscribers();
             getAllChangeProducts();
-        } else if (user.isAdmin == 0) {
+        } else if (customer.isAdmin == 0) {
             // inte admin
             getUserOrders();
         }
     })
 
 }
+console.log(checkAdminStatus)
 
 function numberOfProductsInCart() {
     var getCart = JSON.parse(localStorage.getItem("localCart"))

@@ -12,7 +12,7 @@ try {
     if($_POST['endpoint'] == 'createOrder') {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
-        $result = createPurchase($order["userId"], $order["shipperID"], $order["date"], $order["sum"]); 
+        $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
                  for($i = 0; $i < sizeof($order["details"]); $i++){
             createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
         }
@@ -34,15 +34,15 @@ try {
         if($_POST['endpoint'] == 'getAll') {
 
             include('./../Handlers/orderHandler.php');
-            $user = unserialize($_SESSION['user']);
-            $result = getAll($user);
+            $customer = unserialize($_SESSION['customer']);
+            $result = getAll($customer);
             echo json_encode($result); 
 
         }else if($_POST['endpoint'] == 'createOrder') {
             $order = json_decode($_POST['sortedCart'], true);
             include('./../Handlers/orderHandler.php');
 
-            $result = createPurchase($order["userId"], $order["shipperID"], $order["date"], $order["sum"]); 
+            $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
             
              for($i = 0; $i < sizeof($order["details"]); $i++){
                 createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
@@ -60,9 +60,9 @@ try {
         if($_GET['endpoint'] == 'getAllFromUser') {
  
             include('./../Handlers/orderHandler.php');
-            $userId = unserialize($_SESSION['loggedinUser'])['userID'];
-            error_log($userId);
-            $result = getAllFromUser($userId);
+            $customerID = unserialize($_SESSION['loggedinUser'])['customerID'];
+            error_log($customerID);
+            $result = getAllFromUser($customerID);
             echo json_encode($result); 
  
         } else if($_GET['endpoint'] == 'getAllOrder') {
