@@ -1,5 +1,5 @@
 <?php 
-class User {
+class customer {
     public $fName;
     public $lName;
     public $email;
@@ -20,7 +20,6 @@ class User {
         $this->country = $country;
         $this->street = $street;
     }
-
 
 };
 

@@ -1,6 +1,6 @@
 <?php 
 
-function getAllProcutsInStock (){
+/* function getAllProcutsInStock (){
     include_once('./../Class/database.php');
     $database = new Database();
 
@@ -13,12 +13,12 @@ function getAllProcutsInStock (){
         exit;
     }
     return $stockInfo; 
-}
+} */
 
 
 
-function getAllFromUser($user) {
-    error_log($user);
+function getAllFromUser($customer) {
+    error_log($customer);
     include_once('./../Class/database.php');
     $database = new Database();
 
@@ -29,11 +29,11 @@ function getAllFromUser($user) {
     ON o.ID = pd.orderID 
     INNER JOIN product as p 
     ON pd.productID = p.ID
-    WHERE o.customerID = :user;
+    WHERE o.customerID = :customer;
     EOD;
-    error_log($user);
+    error_log($customer);
     $statement = $database->connection->prepare($query);
-    $statement->bindParam(':user', $user, PDO::PARAM_INT);
+    $statement->bindParam(':customer', $customer, PDO::PARAM_INT);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -112,7 +112,7 @@ function getAllOrders() {
     $database = new Database();
     
     $query = <<<EOD
-    SELECT o.purchaseID, o.date,o.sum, pd.quantity, pd.sum, p.name, p.price
+    SELECT o.orderID, o.date,o.sum, pd.quantity, pd.sum, p.name, p.price
     FROM purchase AS o 
     INNER JOIN purchasedetails AS pd
     ON o.purchaseID = pd.purchaseID 

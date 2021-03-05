@@ -1,4 +1,4 @@
-//import { getLogggedInUser } from './userResource.js'  // vi kör G krav
+import { getLogggedInUser } from './userResource.js'  // vi kör G krav
 import{ renderShippers } from './shipperResource.js'
 
 function getCart() {
@@ -30,14 +30,14 @@ export function getUserOrders() {
     })
 }
 
-export function checkInStock() {
+/* export function checkInStock() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=checkInStock', 'GET', null, (checkInStock) => {
         if (checkInStock.status == 404){
         } else {
             renderOrders(checkInStock);     
         }
     })
-}
+} */
 
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
@@ -178,10 +178,12 @@ function renderProducts(product) {
         contentDiv.appendChild(productButton);
     }    
 }  
-/* export function makeOrder(){
+export function makeOrder(){
     cartSort(JSON.stringify(getShipperID()), JSON.stringify(getShipperID()))
-}; */
+};
+
 /* JSON.stringify(getCart()) */
+
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
         if (result.status == 404){
@@ -224,24 +226,24 @@ function formatDate(date) {
     return [year, month, day].join('-');
 }
 
-function cartSort(userId, shipperID){
+function cartSort(customerID, shipperID){
     let order = {
         sum: 0,
-        userId: userId,
+        customerID: customerID,
         shipperID: shipperID,
         date: formatDate(new Date().toDateString()),
         details: []
     }
     
     let cart = getCart()
-    console.log(cart)
+    //console.log(cart)
     
     cart.forEach((product) => {
         let exists = false
         order.sum += (Number)(product.price)
         
         order.details.forEach((orderDetail) => {
-            //console.log(result);
+                //console.log(result);
             if(orderDetail.productID == product.productID) {
                 //quantity = 1; //test
                 orderDetail.quantity++

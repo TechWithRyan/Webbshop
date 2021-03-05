@@ -28,6 +28,8 @@ export function getAllCategory() {
         const showProducts = document.getElementById("allProducts")
         showProducts.innerHTML = "" 
         
+        
+        
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
@@ -127,11 +129,11 @@ export function getDiscount() {
 }
 function getAll(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
-        console.log(result);
+        //console.log(result);
         //console.log(result[0]['ID']);
         for (let i = 0; i < result.length; i++){
             
-            console.log(result.length[i]);
+        //console.log(result.length[i]);
         }
     })
 };
@@ -142,6 +144,8 @@ function showBothMenAndWomen(){
             const showProducts = document.getElementById("allProducts")
             showProducts.innerHTML = "" 
 
+            console.log(result[5]['name']);
+            
             for (let i = 0; i < result.length; i++) {
                 const selectedProduct = result[i]
                 

@@ -25,7 +25,7 @@ try {
                     include('./../Handlers/userHandler.php');
                     //include('./../Class/userClass.php');
 
-                    //$user = new User($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
+                    //$customer = new customer($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
 
                     $result = registerNewUser(
                         $_POST["fName"],

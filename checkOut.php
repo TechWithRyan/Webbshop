@@ -71,8 +71,8 @@
         <input type="text" id="fName">
         <h1>Efternamn</h1>
         <input type="text" id="lName">
-        <h1>userId</h1>
-        <input type="text" id="userId">
+        <h1>customerID</h1>
+        <input type="text" id="customerID">
         <h1>Adress</h1>
         <input type="text" id="street">
         <h1>Stad</h1>
