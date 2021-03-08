@@ -15,7 +15,6 @@ function postNewsletter($email, $fName, $lName){
                                                     
     $sth->execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
-    //Använder fetch istället för fetchAll för att få ut usern utanför array av alla users
 
     
     return $result; 
@@ -23,4 +22,3 @@ function postNewsletter($email, $fName, $lName){
 
 ?>
 
-<!-- ':email' => $email, ':fName' => $fName, ':lName' => $lName -->

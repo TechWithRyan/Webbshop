@@ -178,11 +178,17 @@ function renderProducts(product) {
         contentDiv.appendChild(productButton);
     }    
 }  
-export function makeOrder(){
+/* export function makeOrder(){
     cartSort(JSON.stringify(getShipperID()), JSON.stringify(getShipperID()))
-};
+}; */
 
 /* JSON.stringify(getCart()) */
+
+export function makeOrder(){
+    getLogggedInUser((customer) => {        
+        cartSort(customer.customerID, JSON.stringify(getShipperID()))
+    })
+}
 
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
@@ -227,6 +233,7 @@ function formatDate(date) {
 }
 
 function cartSort(customerID, shipperID){
+    console.log(cartSort)
     let order = {
         sum: 0,
         customerID: customerID,
@@ -236,7 +243,6 @@ function cartSort(customerID, shipperID){
     }
     
     let cart = getCart()
-    //console.log(cart)
     
     cart.forEach((product) => {
         let exists = false

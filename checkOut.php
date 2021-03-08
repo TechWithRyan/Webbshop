@@ -83,10 +83,10 @@
         <input type="text" id="country">
         <h1>Telefonnummer</h1>
         <input type="text" id="phone">
-        <!-- <h1>Username</h1>
+        <h1>Username</h1>
         <input type="text" id="usernameInput">
         <h1>Password</h1>
-        <input type="password" id="passwordInput">  -->   
+        <input type="password" id="passwordInput">    
     </div>  
 </div>
                 

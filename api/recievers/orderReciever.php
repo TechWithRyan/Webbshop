@@ -13,6 +13,8 @@ try {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
         $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
+        echo $order['customerID'];
+        exit;
                  for($i = 0; $i < sizeof($order["details"]); $i++){
             createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
         }
