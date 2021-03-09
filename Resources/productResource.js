@@ -10,7 +10,7 @@ function makeRequest(url, method, FormData, callback) {
     }).then((data) => {
         return data.json()
     }).then((result) => {
-        callback(result);
+        callback(result)
     }).catch((err) => {
         console.log("Error: ", err)
     })
@@ -117,6 +117,7 @@ export function getDiscount() {
             discount.id = "discount"
             
             productContainer.append(productDiv) 
+
             productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
@@ -127,30 +128,32 @@ export function getDiscount() {
         }
     })
 }
-function getAll(){
+
+/* function getAll(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
-        //console.log(result);
-        //console.log(result[0]['ID']);
+        console.log(result);
+        console.log(result[0]['ID']);
         for (let i = 0; i < result.length; i++){
             
-        //console.log(result.length[i]);
+        console.log(result.length[i]);
         }
     })
 };
-getAll()
+getAll() */
+
 function showBothMenAndWomen(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
         for (let i = 0; i < result.length; i++){
             const showProducts = document.getElementById("allProducts")
             showProducts.innerHTML = "" 
 
-            console.log(result[5]['name']);
+            //console.log(result[5]['name']);
             
             for (let i = 0; i < result.length; i++) {
                 const selectedProduct = result[i]
                 
-                const productContainer = document.getElementById("productContainer")
-                productContainer.className = "col"
+                //const productContainer = document.getElementById("productContainer")
+                //productContainer.className = "col"
                 
                 const productDiv = document.createElement("div")
                 productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
@@ -174,7 +177,7 @@ function showBothMenAndWomen(){
                 const price = document.createElement("h3") 
                 price.innerHTML = selectedProduct.price - selectedProduct.discount + " kr"
                 
-                productContainer.append(productDiv) 
+                //productContainer.append(productDiv) 
                 productDiv.append(image)
                 productDiv.append(title)
                 productDiv.append(price)
@@ -204,9 +207,9 @@ function saveToLocalStorage(selectedProduct) {
 
 function numberOfProductsInCart() {
     var getCart = JSON.parse(localStorage.getItem("localCart"))
+    console.log(getCart)
     var quantity = document.getElementById("numberOfItemsInCart")
     quantity.innerHTML = getCart.length;   
 }
-numberOfProductsInCart()
 
 

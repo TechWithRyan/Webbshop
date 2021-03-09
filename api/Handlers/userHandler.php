@@ -39,9 +39,10 @@ function getSpecific($uname, $pw){
 }
 
 function registerNewUser($fName, $lName, $email, $phone, $password, $city, $postalcode, $country, $street){
-    include_once('./../Class/userClass.php');
+    //include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
     $database = new Database();
+    //$customer = new customer(12312, 32131, 12321, 312321, 31231, 312, 2123, 31231);
     $hashedpass = hash("md5", $password);
 
     try {

@@ -48,7 +48,7 @@
   <div class="mt-4">
       <a href="login.php">Logga in på min profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
     </div>   
-    <div class="mt-4 heading">
+    <div class="mt-4 heading" class="myPageBody">
       <h1>Mina beställningar</h1>
     </div>
     <div class="cartField">

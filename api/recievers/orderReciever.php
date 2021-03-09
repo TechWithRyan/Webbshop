@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-try {
+/* try {
     
-   /*  if($_GET['endpoint'] == 'checkInStock') {
+    if($_GET['endpoint'] == 'checkInStock') {
         include('./../Handlers/orderHandler.php');
         $result = checkInStock();
         echo json_encode($result);
      
-    } */
+    }
     if($_POST['endpoint'] == 'createOrder') {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
@@ -26,9 +26,9 @@ try {
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
     exit;
-}
+} */
 
-/* try {
+try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
     } else if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -95,6 +95,6 @@ try {
  
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
-} */
+}
 
 ?>

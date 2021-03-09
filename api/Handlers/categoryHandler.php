@@ -15,7 +15,7 @@ function getAll() {
     return $result; 
 }
 
-/* function getSpecific($specificCategory) {
+function getSpecific($specificCategory) {
     include_once('./../Class/database.php');
     $database = new Database();
 
@@ -28,7 +28,7 @@ function getAll() {
         exit;
     }
     return $result; 
-} */
+}
 
 function getAllProducts() {
     include_once('./../Class/database.php');
