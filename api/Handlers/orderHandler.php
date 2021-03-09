@@ -46,15 +46,15 @@ function getAllFromUser($customer) {
 
 
 
-function createPurchase($userId, $shipperID, $date, $sum){
-    $userID = 1; //test value, det måste bort 
+function createPurchase($customerID, $shipperID, $date, $sum){
+    //return $customerID;
     //include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
     $database = new Database();
     $datum = $date;
     
     try {
-        $sql_array = array(':customerID' => $userId, 
+        $sql_array = array(':customerID' => $customerID, 
         ':shipperID' => $shipperID,     
         ':datum' => $datum, 
         ':sum' => $sum);
@@ -63,11 +63,12 @@ function createPurchase($userId, $shipperID, $date, $sum){
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $qry = $database->connection->prepare('INSERT INTO `order` (customerID, shipperID, `date`, `sum`)
          VALUES (:customerID, :shipperID, :datum, :sum);');
-        $qry->execute(array(':customerID' => $userId, 
+        $qry->execute(array(':customerID' => $customerID, 
                             ':shipperID' => $shipperID,     
                             ':datum' => $datum, 
                             ':sum' => $sum));
                             $id = $database->connection->lastInsertId();
+                            
                             return $id;
                             //$result = $query->fetch(PDO::FETCH_ASSOC);
         

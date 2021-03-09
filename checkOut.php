@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./style/checkOutStyle.css">
     <link rel="stylesheet" href="./style/shipperStyle.css"> 
     
+    <!-- <script defer src="/Resources/orderResource.js"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="style/startpage.css">
     <script defer type ="module" src="./checkOutHandler.js"></script>
     <script defer type ="module" src="./shippersHandler.js"></script>
-    <script defer type="module" src="./handler.js"></script>
+    <!-- <script defer type="module" src="./handler.js"></script> -->
 </head>
 <body>
 
@@ -65,15 +66,13 @@
 <h2>Leveransadress</h2>
 </div>
 
-    <div class="checkOutForm">                     
-    <div id="checkoutField" id="userData">
-        <h1>Förnamn</h1>
-        <input type="text" id="fName">
-        <h1>Efternamn</h1>
-        <input type="text" id="lName">
-        <h1>customerID</h1>
-        <input type="text" id="customerID">
-        <h1>Adress</h1>
+<div class="checkOutForm">                     
+  <div id="checkoutField" id="userData">
+    <h1>Förnamn</h1>
+    <input type="text" id="fName">
+    <h1>Efternamn</h1>
+    <input type="text" id="lName">
+       <h1>Adress</h1>
         <input type="text" id="street">
         <h1>Stad</h1>
         <input type="text" id="city">
@@ -87,15 +86,15 @@
         <input type="text" id="usernameInput">
         <h1>Password</h1>
         <input type="password" id="passwordInput">    
-    </div>  
-</div>
-                
-
-    <div class="mt-4 heading">
-        <h2>Betalning:</h2>
-    </div> 
-        <button class="btn btn-outline-success" id="checkoutSubmit">Slutför beställning</button>
+      </div>  
     </div>
+    <div class="mt-4 heading">
+      <h2>Betalning:</h2>
+    </div> 
+    <button class="btn btn-outline-success" id="checkoutSubmit">Slutför beställning</button>
+  </div>
+  <div id="buttonDiv"></div>
+  <div id="allProducts"></div>
     </main>
     <footer>
     <div class="container">

@@ -59,24 +59,6 @@
         </div>
     </div>
     
-
-<!--     <div class="col-12">
-    
-        <div class="row" id="loginDiv">
-        <p>Användarnamn</p>
-            <input type="text" id="usernameInput" placeholder="Användarnamn">
-
-        <p>Lösenord</p>
-            <input type="password" id="passwordInput" placeholder="Lösenord">
-            <button  class="btn btn-outline-success" id="login_btn">Login</button>
-        </div>
-
-        <div class="row" id="logoutDiv">
-            <button class="btn btn-outline-success" id="logout_btn">Logga ut</button>
-        </div>
-
-    </div> -->
- 
 </main>
 
 <footer class="fixed-bottom">

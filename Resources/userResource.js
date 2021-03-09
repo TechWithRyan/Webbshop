@@ -16,9 +16,9 @@ export function getLogggedInUser(callback){
         if (result == false){
             console.log("not logged in")
             callback(result)
-            console.log(result)
         } else {
             callback(result)
+            console.log(result)
         }
     })
 }
@@ -30,19 +30,20 @@ export async function login(event) {
         if (customer.status == 404){
             alert("Det gick inte att logga in!");
         } else {
-            localStorage.setItem("Current User", JSON.stringify(customer));
+            localStorage.setItem("currentUser", JSON.stringify(customer));
             alert("Du är inloggad!");
-            window.location.href='index.php';
+            //window.location.href='index.php';
         }
     })
 }
 
 
 export function logout(customer) {
-    localStorage.removeItem("Current User", JSON.stringify(customer));
+    localStorage.removeItem("currentUser", JSON.stringify(customer));
     makeRequest('./../API/recievers/userReciever.php?endpoint=logout', 'GET', null, (customer) => {
     })
-    alert("Du har loggat ut!")
+    alert("Du har loggat ut!");
+    window.location.href='index.php';
 }
 
 
