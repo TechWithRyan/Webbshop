@@ -22,5 +22,6 @@ class Product {
     public $image;
 }
 
+$productArray = array($ID, $name, $inStock, $price, $discount, $title, $image);
 
 ?>

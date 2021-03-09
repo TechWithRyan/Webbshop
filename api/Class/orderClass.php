@@ -20,5 +20,6 @@ class Order {
 
 }
 
+$orderArray = array($ID, $shipperID, $customerID, $date, $sum);
 
 ?>
