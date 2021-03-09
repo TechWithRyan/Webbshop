@@ -23,9 +23,9 @@ try {
                 isset($_POST["country"]) &&
                 isset($_POST["street"])) {
                     include('./../Handlers/userHandler.php');
-                    //include('./../Class/userClass.php');
+                    include('./../Class/userClass.php');
 
-                    //$customer = new customer($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
+                    $customer = new customer($fName, $lName, $email, $street, $city, $postalcode, $country, $phone);
 
                     $result = registerNewUser(
                         $_POST["fName"],

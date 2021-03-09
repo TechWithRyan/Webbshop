@@ -28,8 +28,7 @@ export function getAllCategory() {
         const showProducts = document.getElementById("allProducts")
         showProducts.innerHTML = "" 
         
-        
-        
+               
         for (let i = 0; i < result.length; i++) {
             const selectedProduct = result[i]
             
@@ -63,6 +62,7 @@ export function getAllCategory() {
             productDiv.append(image)
             productDiv.append(title)
             productDiv.append(price)
+            productDiv.append(inStock)
             
             if(selectedProduct.discount != 0) {
                 const discount = document.createElement("h4")
