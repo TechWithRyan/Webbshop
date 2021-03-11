@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-try {
+/* try {
     
-    /* if($_GET['endpoint'] == 'checkInStock') {
+    if($_GET['endpoint'] == 'checkInStock') {
         include('./../Handlers/orderHandler.php');
         $result = checkInStock();
         echo json_encode($result);
         
-    } */
-    if($_POST['endpoint'] == 'createOrder') {
+    }
+     if($_POST['endpoint'] == 'createOrder') {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
 $orderjson = json_encode($order);
@@ -30,8 +30,8 @@ error_log($orderjson);
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
     exit;
-}
-/* 
+}  */
+ 
 try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
@@ -54,7 +54,7 @@ try {
             }
 
 
-            echo json_encode($order["details"][1]["productID"]);
+            echo json_encode(true);
         } else {
             throw new Exception('Not a valid endpoint', 501);
         }
@@ -98,6 +98,6 @@ try {
  
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
-} */
+}
 
 ?>
