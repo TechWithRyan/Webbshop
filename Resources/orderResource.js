@@ -7,6 +7,12 @@ function getCart() {
   function getShipperID() {
     return JSON.parse(localStorage.getItem("shipperID")) || [];
   }
+  function getCurrentUser() {
+    let user = JSON.parse(localStorage.getItem("currentUser")) || [];
+    console.log(user)
+    return user
+  }
+  
 
 function makeRequest(url, method, data, callback) {
     fetch(url, {
@@ -53,9 +59,9 @@ function renderOrders(result) {
         let contentDiv = document.createElement('div');
         contentDiv.classList = 'contentDiv';
         
-        let purchaseID = document.createElement('p');
-        purchaseID.classList = 'text';
-        purchaseID.innerText = 'orderID' + ' ' + selectedOrder.purchaseID + ',';
+        let orderID = document.createElement('p');
+        orderID.classList = 'text';
+        orderID.innerText = 'orderID' + ' ' + selectedOrder.orderID + ',';
         
         let date = document.createElement('p')
         date.classList = 'text';
@@ -79,7 +85,7 @@ function renderOrders(result) {
         
         orderDiv.appendChild(contentDiv);
         
-        contentDiv.appendChild(purchaseID);
+        contentDiv.appendChild(orderID);
         contentDiv.appendChild(date);
         contentDiv.appendChild(sum);
         contentDiv.appendChild(quantity);
@@ -185,11 +191,16 @@ function renderProducts(product) {
 /* JSON.stringify(getCart()) */
 
 export function makeOrder(){
-    getLogggedInUser((customer) => {        
-        cartSort(customer.customerID, JSON.stringify(getShipperID()))
-    })
-}
+    let customer = getCurrentUser()
+    getLogggedInUser((customer) => {    
 
+console.log(getShipperID())
+
+        cartSort(customer[0].customerID, getShipperID())
+                //console.log(customer[0].customerID)    
+    
+})
+}
 export function getAllOrders() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
         if (result.status == 404){
@@ -224,16 +235,14 @@ function formatDate(date) {
     month = '' + (d.getMonth() + 1),
     day = '' + d.getDate(),
     year = d.getFullYear();
-    
-    if (month.length < 2) 
+        if (month.length < 2) 
     month = '0' + month;
     if (day.length < 2) 
     day = '0' + day;
     return [year, month, day].join('-');
 }
-
 function cartSort(customerID, shipperID){
-    console.log(cartSort)
+    console.log(shipperID)
     let order = {
         sum: 0,
         customerID: customerID,
@@ -241,25 +250,20 @@ function cartSort(customerID, shipperID){
         date: formatDate(new Date().toDateString()),
         details: []
     }
-    
-    let cart = getCart()
-    
-    cart.forEach((product) => {
+    console.log(order)
+let cart = getCart()
+    //console.log(cart)
+        cart.forEach((product) => {
+            //console.log(product)
         let exists = false
         order.sum += (Number)(product.price)
-        
-        order.details.forEach((orderDetail) => {
-                //console.log(result);
+                order.details.forEach((orderDetail) => {
             if(orderDetail.productID == product.productID) {
-                //quantity = 1; //test
                 orderDetail.quantity++
                 orderDetail.sum += (Number)(product.price)
-                console.log(order)
-                console.log(orderDetail)
                 exists = true
             }
         })
-
         if(!exists) {
             order.details.push({
                 productID: product.productID,
@@ -268,13 +272,13 @@ function cartSort(customerID, shipperID){
             })
         }
     })
-
     let data = new FormData();
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
-    //console.log(result)
-    data.delete('sortedCart')
-    data.delete('endpoint')
+        //data.delete('sortedCart')
+        //data.delete('endpoint')
+        console.log(result)
+        console.log(order)
     })
 };

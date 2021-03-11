@@ -8,6 +8,7 @@ checkAdminStatus();
 
 function checkAdminStatus(){
     getLogggedInUser((customer) => {
+        console.log(checkAdminStatus);
         if (customer.isAdmin == 1) {
             // admin
             getAllOrders();
@@ -20,7 +21,6 @@ function checkAdminStatus(){
     })
 
 }
-console.log(checkAdminStatus)
 
 function numberOfProductsInCart() {
     var getCart = JSON.parse(localStorage.getItem("localCart"))
