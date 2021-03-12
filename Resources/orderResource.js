@@ -48,7 +48,7 @@ export function getUserOrders() {
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
     let order = result;
-    
+    console.log(result);
     let orderDiv = document.createElement("div");
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';
@@ -149,7 +149,7 @@ function renderProducts(product) {
         
         let productID = document.createElement('p');
         productID.classList = 'text';
-        productID.innerText = 'produktID' + ' ' + selectedOrder.productID + ',';
+        productID.innerText = 'productID' + ' ' + selectedOrder.productID + ',';
         
         let name = document.createElement('p')
         name.classList = 'text';
@@ -184,11 +184,6 @@ function renderProducts(product) {
         contentDiv.appendChild(productButton);
     }    
 }  
-/* export function makeOrder(){
-    cartSort(JSON.stringify(getShipperID()), JSON.stringify(getShipperID()))
-}; */
-
-/* JSON.stringify(getCart()) */
 
 export function makeOrder(){
     let customer = getCurrentUser()
@@ -202,14 +197,16 @@ console.log(getShipperID())
 })
 }
 export function getAllOrders() {
+    //console.log(getAllOrders);
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllOrder', 'GET', null, (result) => {
+        console.log(result);
         if (result.status == 404){
+            alert(result);
         } else {
             renderOrders(result);     
         }
     })
 }
-
 export function getAllSubscribers() {
     makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllSubscribers', 'GET', null, (result) => {
         if (result.status == 404){

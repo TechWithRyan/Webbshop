@@ -141,3 +141,32 @@ html, body {
     color: white;
     padding-left: 10px;
 }
+
+.contentDiv {
+    border-style: solid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2px;
+    background-color: #60965b;
+}
+
+.text {
+    font-size: 16px;
+    color: white;
+    padding-left: 10px;
+}
+
+.productButton {
+    background-color: #98f1fd;
+    color: rgb(48, 45, 204);
+    outline-style: none;
+    width: 130px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fixed-bottom{
+    position: relative;
+}

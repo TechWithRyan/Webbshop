@@ -15,15 +15,15 @@ function getAll() {
     return $result; 
 }
 
-function updateInStock($newnumber, $prodID) {
+function updateInStock($newnumber, $productID) {
     include_once('./../Class/database.php');
     $database = new Database();
 
     $query = <<<EOD
-    UPDATE product SET inStock = $newnumber WHERE ID = :product;
+    UPDATE product SET inStock = $newnumber WHERE productID = :product;
     EOD;
     $statement = $database->connection->prepare($query);
-    $statement->execute(array(':produkt' => $prodID));
+    $statement->execute(array(':product' => $productID));
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if (empty($result)) {

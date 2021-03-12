@@ -8,23 +8,25 @@ checkAdminStatus();
 
 function checkAdminStatus(){
     getLogggedInUser((customer) => {
-        console.log(checkAdminStatus);
-        if (customer.isAdmin == 1) {
+        console.log(customer[0].isAdmin);
+        
+        if (customer[0].isAdmin == 1) {
             // admin
             getAllOrders();
             getAllSubscribers();
             getAllChangeProducts();
-        } else if (customer.isAdmin == 0) {
+        } else if (customer[0].isAdmin == 0) {
             // inte admin
             getUserOrders();
+            //console.log(result);
         }
     })
-
+    
 }
-
+/* 
 function numberOfProductsInCart() {
     var getCart = JSON.parse(localStorage.getItem("localCart"))
     var quantity = document.getElementById("numberOfItemsInCart")
     quantity.innerHTML = getCart.length  
 }
-numberOfProductsInCart()
+numberOfProductsInCart() */
