@@ -252,9 +252,9 @@ function cartSort(customerID, shipperID){
     }
     console.log(order)
 let cart = getCart()
-    console.log(cart)
+    //console.log(cart)
         cart.forEach((product) => {
-            console.log(product)
+            //console.log(product)
         let exists = false
         order.sum += (Number)(product.price)
                 order.details.forEach((orderDetail) => {
@@ -276,8 +276,8 @@ let cart = getCart()
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
-        data.delete('sortedCart')
-        data.delete('endpoint')
+        //data.delete('sortedCart')
+        //data.delete('endpoint')
         console.log(result)
         console.log(order)
     })

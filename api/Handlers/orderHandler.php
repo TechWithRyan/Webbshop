@@ -48,6 +48,8 @@ function getAllFromUser($customer) {
 
 function createPurchase($customerID, $shipperID, $date, $sum){
     //return $customerID;
+    //$status = empty($date);
+    //error_log($status);
     //include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
     $database = new Database();
@@ -58,8 +60,6 @@ function createPurchase($customerID, $shipperID, $date, $sum){
         ':shipperID' => $shipperID,     
         ':datum' => $datum, 
         ':sum' => $sum);
-        echo json_encode($sql_array);
-        exit;
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $qry = $database->connection->prepare('INSERT INTO `order` (customerID, shipperID, `date`, `sum`)
          VALUES (:customerID, :shipperID, :datum, :sum);');
@@ -82,6 +82,7 @@ function createPurchaseDetail($purchaseID, $productID, $quantity, $sum){
     include_once('./../Class/database.php');
     $database = new Database();
     
+   
 
     try {
 

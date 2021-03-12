@@ -7,18 +7,22 @@ session_start();
         include('./../Handlers/orderHandler.php');
         $result = checkInStock();
         echo json_encode($result);
-     
+        
     }
-    if($_POST['endpoint'] == 'createOrder') {
+     if($_POST['endpoint'] == 'createOrder') {
         $order = json_decode($_POST['sortedCart'], true);
         include('./../Handlers/orderHandler.php');
+$orderjson = json_encode($order);
+error_log($orderjson);
+        //$status = gettype($order);
+        //error_log($status);     
+        //error_log($result);
         $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
-        echo $order['customerID'];
-        exit;
+        //echo $order['customerID'];
                  for($i = 0; $i < sizeof($order["details"]); $i++){
             createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
         }
-        echo json_encode($order["details"][1]["productID"]);
+        echo json_encode(true); 
     } else {
         throw new Exception('Not a valid endpoint', 501);
     }
@@ -26,8 +30,8 @@ session_start();
 } catch(Exception $e) {
     echo json_encode(array('Message' => $e->getMessage(), 'status' => $e->getCode()));
     exit;
-} */
-
+}  */
+ 
 try {
     if (!isset($_SESSION['loggedinUser'])) {
         throw new Exception('Not authorized', 403);
@@ -43,7 +47,6 @@ try {
         }else if($_POST['endpoint'] == 'createOrder') {
             $order = json_decode($_POST['sortedCart'], true);
             include('./../Handlers/orderHandler.php');
-
             $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
             
              for($i = 0; $i < sizeof($order["details"]); $i++){
@@ -51,7 +54,7 @@ try {
             }
 
 
-            echo json_encode($order["details"][1]["productID"]);
+            echo json_encode(true);
         } else {
             throw new Exception('Not a valid endpoint', 501);
         }

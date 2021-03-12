@@ -30,13 +30,13 @@ function buttonPayment(){
     getLogggedInUser((customer) => {        
         if(customer.fName){
             makeOrder();
-            //afterOrderAlert();
+            afterOrderAlert();
         }
         else {
-            //registerNewUser();
+            registerNewUser();
             login();
             makeOrder();
-            //afterOrderAlert();
+            afterOrderAlert();
         }
         
     })
