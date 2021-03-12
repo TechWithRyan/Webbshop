@@ -21,14 +21,14 @@ function getAllFromUser($customer) {
     error_log($customer);
     include_once('./../Class/database.php');
     $database = new Database();
-
+    
     $query = <<<EOD
     SELECT *
     FROM `order` AS o 
     INNER JOIN orderdetails AS pd
-    ON o.ID = pd.orderID 
+    ON o.orderID = pd.orderID 
     INNER JOIN product as p 
-    ON pd.productID = p.ID
+    ON pd.productID = p.productID
     WHERE o.customerID = :customer;
     EOD;
     error_log($customer);
@@ -36,7 +36,6 @@ function getAllFromUser($customer) {
     $statement->bindParam(':customer', $customer, PDO::PARAM_INT);
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
     if (empty($result)) {
         throw new exception('No order found', 404);
         exit;
@@ -115,9 +114,9 @@ function getAllOrders() {
     
     $query = <<<EOD
     SELECT o.orderID, o.date,o.sum, pd.quantity, pd.sum, p.name, p.price
-    FROM purchase AS o 
-    INNER JOIN purchasedetails AS pd
-    ON o.purchaseID = pd.purchaseID 
+    FROM `order` AS o 
+    INNER JOIN orderdetails AS pd
+    ON o.orderID = pd.orderID 
     INNER JOIN product as p 
     ON pd.productID = p.productID
     EOD;

@@ -49,18 +49,17 @@
       <a href="login.php">Logga in på min profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
     </div>   
     <div class="mt-4 heading" class="myPageBody">
-      <h1>Mina beställningar</h1>
+      <h1>Admin SIDA</h1>
     </div>
     <div class="cartField">
             <div id="numberOfItemsInCart"></div>
             <a href="cart.php"><img src="./img/CartIcon.png" style="width:20px;height:auto;text-align:right;"></a>
         </div>
+          
     <div class="MainOrderDiv"></div>
-
 </main>
 
-    
-<footer class="fixed-bottom">
+    <footer class="fixed-bottom">
     <div class="container">
       <div class="row">
         <div class="col-12">
