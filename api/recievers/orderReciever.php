@@ -68,7 +68,7 @@ try {
             $customerID = unserialize($_SESSION['loggedinUser'])['customerID'];
             error_log($customerID);
             $result = getAllFromUser($customerID);
-            echo json_encode($result); 
+            //echo json_encode($result); 
  
         } else if($_GET['endpoint'] == 'getAllOrder') {
  
