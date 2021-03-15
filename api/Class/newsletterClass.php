@@ -6,8 +6,8 @@ class Newsletter {
         $this->ID = $ID;
         $this->customerID = $customerID;
         $this->fName = $fName;
-        $this ->lName = $lName;
-        $this ->email = $email;
+        $this->lName = $lName;
+        $this->email = $email;
      
     }
     
