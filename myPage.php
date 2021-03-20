@@ -27,10 +27,13 @@
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
+                    <a class="nav-link" href="login.php"> Logga In <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                  </li>
+                <li class="nav-item">
                     <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                    <a class="nav-link" href="myPage.php"> Beställningar <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>
@@ -45,11 +48,9 @@
     
 
   
-  <div class="mt-4">
-      <a href="login.php">Logga in på min profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
-    </div>   
+   
     <div class="mt-4 heading" class="myPageBody">
-      <h1>Admin SIDA</h1>
+      <h1>Alla Beställningar</h1>
     </div>
     <div class="cartField">
             <div id="numberOfItemsInCart"></div>
@@ -62,7 +63,7 @@
     <footer class="fixed-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-12">
+        <!-- <div class="col-12">
             <h3>Prenumerera på vårt nyhetsbrev</h3>
               <form class="newsletterField" id ="newsletter-form">
                 <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
@@ -70,7 +71,7 @@
                 <input type="text" name="email" id="email" placeholder="E-post">
                 <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
               </form>
-        </div>
+        </div> -->
       </div>
     </div>
 </footer>

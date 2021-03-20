@@ -60,14 +60,24 @@ try {
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         if($_GET['endpoint'] == 'getAllFromUser') {
- 
+            
             include('./../Handlers/orderHandler.php');
-            $customerID = unserialize($_SESSION['loggedinUser']);
-            echo json_encode($customerID);
-            $result = getAllFromUser($customerID);
-            echo json_encode($_SESSION["customerID"]);
-            //echo json_encode($result); 
- 
+            
+            $customer = unserialize($_SESSION['loggedinUser']);
+            
+            //error_log($customer[0]["customerID"]);
+            
+            //$orderjson = json_encode($customer[0]["customerID"]);
+            //error_log($orderjson);
+            
+            
+            //$status = gettype($customer);
+            //error_log($status);
+            
+            $result = getAllFromUser($customer);
+            echo json_encode($result); 
+            
+            
         } else if($_GET['endpoint'] == 'getAllOrder') {
  
             include('./../Handlers/orderHandler.php');

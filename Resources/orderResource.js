@@ -8,9 +8,9 @@ function getCart() {
     return JSON.parse(localStorage.getItem("shipperID")) || [];
   }
   function getCurrentUser() {
-    let user = JSON.parse(localStorage.getItem("currentUser")) || [];
-    console.log(user)
-    return user
+    let customer = JSON.parse(localStorage.getItem("currentUser")) || [];
+    console.log(customer)
+    return customer
   }
   
 
@@ -26,10 +26,35 @@ function makeRequest(url, method, data, callback) {
         console.log("Error: ", err)
     })
 }
+  
+
+/* async function getWithVar(variable, value) {​​​​​​​​
+ 
+const response = awaitmakeReq("./api/recievers/orderReciever.php?" + variable + "=" + value,  "GET")
+return response
+
+}
+    
+
+await makeReq("./api/recievers/orderReciever.php?" + variable + "=" + value, "GET") */
+
+function getCustomerID(){
+    let customer = getCurrentUser()
+    getLogggedInUser((customer) => {    
+        
+        
+        console.log(customer[0].customerID)    
+        console.log(customer)
+        //customerID === customer[0].customerID
+    })
+}
 
 export function getUserOrders() {
-    makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllFromUser' + 'customerID', 'GET', null, (result) => {
+    getCustomerID()
+    makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllFromUser', 'GET', null, (result) => {
         console.log(result);
+        
+
         if (result.status == 404){
         } else {
             renderOrders(result);     

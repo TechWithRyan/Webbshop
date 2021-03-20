@@ -69,7 +69,7 @@ function numberOfProductsInCart() {
     var quantity = document.getElementById("numberOfItemsInCart")
     quantity.innerHTML = getCart.length   
 }
-
+numberOfProductsInCart()
 
 function totalCart(){
     const sumDiv = document.getElementById("totalSum")
@@ -85,6 +85,6 @@ function totalCart(){
         sumDiv.appendChild(sum)
     }
 }
-  
+totalCart()
 
 
