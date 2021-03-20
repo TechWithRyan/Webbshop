@@ -52,22 +52,20 @@ try {
              for($i = 0; $i < sizeof($order["details"]); $i++){
                 createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
             }
-
-
             echo json_encode(true);
         } else {
             throw new Exception('Not a valid endpoint', 501);
         }
-
 
     } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
         if($_GET['endpoint'] == 'getAllFromUser') {
  
             include('./../Handlers/orderHandler.php');
-            $customerID = unserialize($_SESSION['loggedinUser'])['customerID'];
-            error_log($customerID);
+            $customerID = unserialize($_SESSION['loggedinUser']);
+            echo json_encode($customerID);
             $result = getAllFromUser($customerID);
+            echo json_encode($_SESSION["customerID"]);
             //echo json_encode($result); 
  
         } else if($_GET['endpoint'] == 'getAllOrder') {
@@ -89,7 +87,7 @@ try {
             echo json_encode($result); 
  
         } else {
-            throw new Exception('Not a valid endpoint', 501);
+            throw new Exception('Not a valid endpoint2', 501);
         }
  
     } else {

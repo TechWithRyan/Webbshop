@@ -28,7 +28,8 @@ function makeRequest(url, method, data, callback) {
 }
 
 export function getUserOrders() {
-    makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllFromUser', 'GET', null, (result) => {
+    makeRequest('./../API/recievers/orderReciever.php?endpoint=getAllFromUser' + 'customerID', 'GET', null, (result) => {
+        console.log(result);
         if (result.status == 404){
         } else {
             renderOrders(result);     
@@ -48,7 +49,6 @@ export function getUserOrders() {
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
     let order = result;
-    console.log(result);
     let orderDiv = document.createElement("div");
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';

@@ -19,12 +19,29 @@
 <header>
 <div class="header">
     <div class="menu-bar">
+      
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="img/route66color.svg" height="48" width="48" alt="Route 66 Retro shop"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <nav>
+      <div class="categorier">
+      <div class="men">
+        <a href="#" id="men">men_test</a>
+      </div>
+      <div class="women">
+        <a href="#" id="women">women_test</a>
+      </div>
+      <div class="baby">
+        <a href="#" id="baby">baby_test</a>
+      </div>
+      <div class="sale">
+        <a href="#" id="sale">sale_test</a>
+      </div>
+      </div>
+    </nav> 
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
@@ -54,9 +71,9 @@
   </div>
     <div class="row">
       <div id="productContainer">
-        <div id="men"></div>
-        <div id="allProducts"></div>
+        
       </div>
+      <div id="allProducts"></div>
     </div>
 </main>
   

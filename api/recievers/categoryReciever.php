@@ -9,7 +9,7 @@ try {
             //reserverad plats för nån post eller annan metod
 
         } else {
-            throw new Exception('Not a valid endpoint', 501);
+            throw new Exception('Not a valid endpoint category', 501);
         }
 
 
