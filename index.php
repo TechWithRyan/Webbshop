@@ -19,19 +19,36 @@
 <header>
 <div class="header">
     <div class="menu-bar">
+      
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><img src="img/route66color.svg" height="48" width="48" alt="Route 66 Retro shop"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              <nav>
+      <div class="categorier">
+      <div class="men">
+        <a href="#" id="man">man</a>
+      </div>
+      <div class="women">
+        <a href="#" id="woman">woman</a>
+      </div>
+      <div class="sale">
+        <a href="#" id="sale">SALE</a>
+      </div>
+      </div>
+    </nav> 
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav justify-content-end">
+              <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"> Logga In <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                  </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                    <a class="nav-link" href="myPage.php"> Beställningar <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>
@@ -50,13 +67,13 @@
 </div>
 
   <div class="mt-4 heading">
-    <h1>Hello Retro Lovers</h1>
+    <h1>Wellcome to Retro Lovers</h1>
   </div>
     <div class="row">
       <div id="productContainer">
-        <div id="men"></div>
-        <div id="allProducts"></div>
+        
       </div>
+      <div id="allProducts"></div>
     </div>
 </main>
   

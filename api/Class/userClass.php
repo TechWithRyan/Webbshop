@@ -25,4 +25,5 @@ class customer {
 
 $userArray = array($fName, $lName, $email, $phone, $city, $postalcode, $country, $street);
  
+
 ?>

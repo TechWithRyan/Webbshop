@@ -46,7 +46,7 @@ try {
 
 
         } else {
-            throw new Exception('Not a valid endpoint', 501);
+            throw new Exception('Not a valid endpoint user', 501);
         }
 
 

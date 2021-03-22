@@ -31,7 +31,7 @@ export async function login(event) {
             alert("Det gick inte att logga in!");
         } else {
             localStorage.setItem("currentUser", JSON.stringify(customer));
-            //alert("Du är inloggad!");
+            alert("Du är inloggad!");
             //window.location.href='index.php';
         }
     })

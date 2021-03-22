@@ -148,7 +148,11 @@ html, body {
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 2px;
-    background-color: #60965b;
+
+    background-color: #959595;
+    border-radius: 11px;
+
+
 }
 
 .text {
@@ -158,8 +162,10 @@ html, body {
 }
 
 .productButton {
-    background-color: #98f1fd;
-    color: rgb(48, 45, 204);
+
+    background-color: #626168;
+    color: rgb(187, 187, 207);
+
     outline-style: none;
     width: 130px;
     height: 30px;
@@ -169,4 +175,18 @@ html, body {
 
 .fixed-bottom{
     position: relative;
+
+}
+
+.categorier {
+    display: flex;
+    justify-content: flex-start;
+    width: 30vw;
+    /* margin-right: 150px; */
+}
+
+.categorier > a {
+    text-decoration: none;
+    color: black;
+
 }

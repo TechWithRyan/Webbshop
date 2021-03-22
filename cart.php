@@ -27,12 +27,15 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav justify-content-end">
+              <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php"> Logga In <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                  </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.html"> Om oss <i class="bi bi-question-circle" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="myPage.php"> Profil <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
+                    <a class="nav-link" href="myPage.php"> Beställningar <i class="bi bi-person" style="font-size: 1.5rem;"></i></a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="cart.php"> Kundkorg <i class="bi bi-bag" style="font-size: 1.5rem;"></i> <span id="numberOfItemsInCart"></span></a>

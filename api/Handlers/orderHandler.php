@@ -18,7 +18,7 @@
 
 
 function getAllFromUser($customer) {
-    error_log($customer);
+   
     include_once('./../Class/database.php');
     $database = new Database();
     
@@ -31,9 +31,8 @@ function getAllFromUser($customer) {
     ON pd.productID = p.productID
     WHERE o.customerID = :customer;
     EOD;
-    error_log($customer);
     $statement = $database->connection->prepare($query);
-    $statement->bindParam(':customer', $customer, PDO::PARAM_INT);
+    $statement->bindParam(':customer', $customer[0]["customerID"], PDO::PARAM_INT); 
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
     if (empty($result)) {

@@ -19,9 +19,9 @@ function makeRequest(url, method, FormData, callback) {
 export function getAllCategory() {
     const category = this.innerHTML;
     let categorytoSend;
-    if (category == "Herr"){
+    if (category == "man"){
         categorytoSend = 1;
-    } else if (category == "Dam") {
+    } else if (category == "woman") {
         categorytoSend = 2;
     }
     makeRequest('./../API/recievers/categoryReciever.php?endpoint=getSpecific&categorytoSend=' + categorytoSend , 'GET', null, (result) => {
@@ -39,7 +39,7 @@ export function getAllCategory() {
             productDiv.className = "card col-sm-12 col-md-12 col-lg-4"
             
             const image = document.createElement("img")
-            image.setAttribute("src", "./img/products/" + selectedProduct + image)
+            image.setAttribute("src", "./img/products/" + selectedProduct.image)
             image.className = "img-product"
             // Kundvagns-ikon i knappen
             const cartIcon = document.createElement("i") 

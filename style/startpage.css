@@ -190,3 +190,16 @@ footer {
 }
 
 
+.categorier{
+    display: flex;
+    justify-content: flex-start;
+       }
+
+.men, .women, .baby, .sale {
+    width: 120px;
+    text-align: center;
+    padding: 15px;
+}
+
+
+
