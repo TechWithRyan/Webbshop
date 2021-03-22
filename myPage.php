@@ -50,7 +50,9 @@
   
    
     <div class="mt-4 heading" class="myPageBody">
+
       <h1>Alla Beställningar</h1>
+
     </div>
     <div class="cartField">
             <div id="numberOfItemsInCart"></div>

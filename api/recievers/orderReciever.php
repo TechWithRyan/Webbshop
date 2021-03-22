@@ -62,6 +62,7 @@ try {
         if($_GET['endpoint'] == 'getAllFromUser') {
             
             include('./../Handlers/orderHandler.php');
+
             
             $customer = unserialize($_SESSION['loggedinUser']);
             
@@ -78,6 +79,7 @@ try {
             echo json_encode($result); 
             
             
+
         } else if($_GET['endpoint'] == 'getAllOrder') {
  
             include('./../Handlers/orderHandler.php');

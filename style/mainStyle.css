@@ -148,8 +148,10 @@ html, body {
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 2px;
+
     background-color: #959595;
     border-radius: 11px;
+
 
 }
 
@@ -160,8 +162,10 @@ html, body {
 }
 
 .productButton {
+
     background-color: #626168;
     color: rgb(187, 187, 207);
+
     outline-style: none;
     width: 130px;
     height: 30px;
@@ -171,6 +175,7 @@ html, body {
 
 .fixed-bottom{
     position: relative;
+
 }
 
 .categorier {
@@ -183,4 +188,5 @@ html, body {
 .categorier > a {
     text-decoration: none;
     color: black;
+
 }

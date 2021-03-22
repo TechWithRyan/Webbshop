@@ -8,19 +8,23 @@ checkAdminStatus();
 
 function checkAdminStatus(){
     getLogggedInUser((customer) => {
+
         //console.log(customer[0].isAdmin);
+
         
         if (customer[0].isAdmin == 1) {
             // admin
             getAllOrders();
             getAllSubscribers();
             getAllChangeProducts();
+
             console.log(customer[0].isAdmin);
         } else if (customer[0].isAdmin == 0) {
             // inte admin
             getUserOrders();
             //console.log(getUserOrders);
             console.log(customer[0].isAdmin);
+
         }
     })
     

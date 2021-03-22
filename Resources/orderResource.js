@@ -74,6 +74,7 @@ export function getUserOrders() {
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
     let order = result;
+
     let orderDiv = document.createElement("div");
     orderDiv.classList = "orderDiv";
     orderDiv.innerHTML = '';

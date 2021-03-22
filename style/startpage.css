@@ -189,6 +189,7 @@ footer {
     flex-direction: column;
 }
 
+
 .categorier{
     display: flex;
     justify-content: flex-start;
@@ -199,5 +200,6 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
 
 
