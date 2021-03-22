@@ -29,16 +29,13 @@
               <nav>
       <div class="categorier">
       <div class="men">
-        <a href="#" id="men">men_test</a>
+        <a href="#" id="man">man</a>
       </div>
       <div class="women">
-        <a href="#" id="women">women_test</a>
-      </div>
-      <div class="baby">
-        <a href="#" id="baby">baby_test</a>
+        <a href="#" id="woman">woman</a>
       </div>
       <div class="sale">
-        <a href="#" id="sale">sale_test</a>
+        <a href="#" id="sale">SALE</a>
       </div>
       </div>
     </nav> 
@@ -70,7 +67,7 @@
 </div>
 
   <div class="mt-4 heading">
-    <h1>Hello Retro Lovers</h1>
+    <h1>Wellcome to Retro Lovers</h1>
   </div>
     <div class="row">
       <div id="productContainer">
