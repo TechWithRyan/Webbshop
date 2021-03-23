@@ -1,6 +1,15 @@
 <?php 
 
+include_once('./../Class/database.php');
+
 class Order {
+    /* properties */
+    public $ID;
+    public $shipperID;
+    public $customerID;
+    public $date;
+    public $sum;
+    
     function __construct($ID, $shipperID, $customerID, $date, $sum) {
         
         $this->ID = $ID;
@@ -8,18 +17,16 @@ class Order {
         $this->customerID = $customerID;
         $this ->date = $date;
         $this ->sum = $sum;
-     
+
     }
-    
-    /* metod */
-    public $ID;
-    public $shipperID;
-    public $customerID;
-    public $date;
-    public $sum;
-
+    public static function fromRow($row){
+        return new Order(
+            $row['ID'], 
+            $row['shipperID'],
+            $row['customerID'],
+            $row['date'],
+            $row['sum'],
+        );
+    }
 }
-
-$orderArray = array($ID, $shipperID, $customerID, $date, $sum);
-
 ?>

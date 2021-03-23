@@ -1,6 +1,7 @@
 <?php 
+include_once('./../Class/productClass.php'); //OOP till class
 
-function getAll() {
+/* function getAll() {
     include_once('./../Class/database.php');
     $database = new Database();
 
@@ -13,51 +14,35 @@ function getAll() {
         exit;
     }
     return $result; 
-}
+} */
 
 function getSpecific($specificCategory) {
-    include_once('./../Class/database.php');
-    $database = new Database();
-
-    $query = $database->connection->prepare('SELECT * FROM categorydetails JOIN product ON categorydetails.productID = product.productID WHERE categoryID = :myCategoryID;');
-    $query->execute(array(':myCategoryID' => $specificCategory));
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
+    $products = Product::findByCategoryId($specificCategory);
+    if (empty($products)) {
         throw new exception('No category found', 404);
         exit;
     }
-    return $result; 
+    return $products;
 }
 
 function getAllProducts() {
-    include_once('./../Class/database.php');
-    $database = new Database();
-
-    $query = $database->connection->prepare('SELECT * FROM product;');
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
-        throw new exception('No category found', 404);
+    $products = Product::findAll();
+    
+    if (empty($products)) {
+        throw new exception('No products found', 404);
         exit;
     }
-    return $result; 
+    return $products; 
 }
 
 function getDiscount() {
-    include_once('./../Class/database.php');
-    $database = new Database();
+    $products = Product::findDiscount();
 
-    $query = $database->connection->prepare('SELECT * FROM product WHERE discount != 0;');
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
+        if (empty($products)) {
         throw new exception('No category found', 404);
         exit;
     }
-    return $result; 
+    return $products; 
 };
 
 ?>

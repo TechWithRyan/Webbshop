@@ -8,7 +8,6 @@ class Newsletter {
         $this->fName = $fName;
         $this->lName = $lName;
         $this->email = $email;
-     
     }
     
     /* metod */
