@@ -48,14 +48,14 @@ function createPurchase($customerID, $shipperID, $date, $sum){
     //return $customerID;
     //$status = empty($date);
     //error_log($status);
-    //include_once('./../Class/userClass.php');
+    include_once('./../Class/userClass.php');
     include_once('./../Class/database.php');
     $database = new Database();
     $datum = $date;
     
     try {
         $sql_array = array(':customerID' => $customerID, 
-        ':shipperID' => $shipperID,     
+        ':shipperID' => $shipperID,
         ':datum' => $datum, 
         ':sum' => $sum);
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -80,8 +80,6 @@ function createPurchaseDetail($purchaseID, $productID, $quantity, $sum){
     include_once('./../Class/database.php');
     $database = new Database();
     
-   
-
     try {
 
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

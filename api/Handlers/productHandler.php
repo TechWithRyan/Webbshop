@@ -1,36 +1,31 @@
 <?php 
+include_once('./../Class/productClass.php'); //OOP till class
+
 
 function getAll() {
-    include_once('./../Class/database.php');
-    $database = new Database();
-
-    $query = $database->connection->prepare('SELECT * FROM Product;' /* SELECT ID, name, inStock FROM product; */);
-    $query->execute();
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
-        throw new exception('No Product found', 404);
+    $products = Product::findAll();
+    
+    if (empty($products)) {
+        throw new exception('No product found', 404);
         exit;
     }
-    return $result; 
+    return $products; 
 }
+
 
 function updateInStock($newnumber, $productID) {
-    include_once('./../Class/database.php');
-    $database = new Database();
-
-    $query = <<<EOD
-    UPDATE product SET inStock = $newnumber WHERE productID = :product;
-    EOD;
-    $statement = $database->connection->prepare($query);
-    $statement->execute(array(':product' => $productID));
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($result)) {
-        throw new exception('Cannot update', 404);
+    $product = Product::findById($productID);
+    if (empty($product)) {
+        throw new exception('No product found', 404);
         exit;
     }
-    return $result; 
+    $product->updateInStock($newnumber);
+    return $product;
 }
+
+
+
+
+
 
 ?>
