@@ -1,24 +1,33 @@
 <?php 
+include_once('./../Class/database.php');
 
 class Newsletter {
-    function __construct($ID, $customerID, $fName, $lName, $email) {
-        
-        $this->ID = $ID;
-        $this->customerID = $customerID;
-        $this->fName = $fName;
-        $this->lName = $lName;
-        $this->email = $email;
-    }
-    
-    /* metod */
-    public $ID;
-    public $customerID;
+    /* properties */
+    public $email;
     public $fName;
     public $lName;
-    public $email;
+    
+    function __construct($email, $fName, $lName) {
+        
+        $this->email = $email;
+        $this->fName = $fName;
+        $this->lName = $lName;
+    }
+    public static function fromRow($row){
+        return new Newsletter(
+            $row['email'],
+            $row['fName'],
+            $row['lName'],
+        );
+    }
 
-}
-
-$newsletterArray = array($ID, $customerID, $fName, $lName, $email);
+    public function create() {
+        $database = new Database(); 
+        $sth = $database->connection->prepare('INSERT INTO subscription (email, fName, lName)
+        VALUES (:email, :fName, :lName)');
+        $sth->execute(array(':email' => $this->email, ':fName' => $this->fName, ':lName' => $this->lName));
+   
+    }
+ }
 
 ?>

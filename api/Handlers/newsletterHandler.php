@@ -1,20 +1,17 @@
 <?php
+include_once('./../Class/newsletterClass.php');
 
 function postNewsletter($email, $fName, $lName){
-    include_once('./../Class/database.php');
     
-    $database = new Database(); 
-      
-    $sth = $database->connection->prepare('INSERT INTO subscription (email, fName, lName)
-                                                    VALUES (:email, :fName, :lName)');
-    $sth->bindParam(':email', $email);
-    $sth->bindParam(':fName', $fName);
-    $sth->bindParam(':lName', $lName);
-                                                    
-    $sth->execute();
-    $result = $sth->fetch(PDO::FETCH_ASSOC);
-
-    return $result; 
+    $letter = new Newsletter($email, $fName, $lName);
+    $letter->create();
+    
+    if (empty($letter)){
+        throw new exception('No Newsletter found to send', 404);
+        exit;
+    }
+    return $letter;
+    
 }
 
 ?>

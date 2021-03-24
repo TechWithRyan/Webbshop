@@ -47,11 +47,7 @@ try {
         }else if($_POST['endpoint'] == 'createOrder') {
             $order = json_decode($_POST['sortedCart'], true);
             include('./../Handlers/orderHandler.php');
-            $result = createPurchase($order["customerID"], $order["shipperID"], $order["date"], $order["sum"]); 
-            
-             for($i = 0; $i < sizeof($order["details"]); $i++){
-                createPurchaseDetail($result, $order["details"][$i]["productID"], $order["details"][$i]["quantity"], $order["details"][$i]["sum"]);
-            }
+            createFullPurchase($order);
             echo json_encode(true);
         } else {
             throw new Exception('Not a valid endpoint', 501);
