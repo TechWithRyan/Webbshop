@@ -69,10 +69,11 @@ class Product {
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
         $products = array_map(function ($row) {
-        return Product::fromRow($row);
+            return Product::fromRow($row);
         }, $result);
         return $products;
     }
+
     public static function findById($id){
         $database = new Database();
 
@@ -98,10 +99,7 @@ class Product {
             throw new exception('Cannot update', 404);
             exit;
         }
-        /* $p = $products[0];
-        $p->findUpdateInStock(6);
-        Product::findAll(); */
-        return $products;  
+              return $products;  
     }
 }
 ?>

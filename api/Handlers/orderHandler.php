@@ -1,21 +1,5 @@
 <?php 
-
-/* function getAllProcutsInStock (){
-    include_once('./../Class/database.php');
-    $database = new Database();
-
-    $query = $database->connection->prepare('SELECT ID, `name`, inStock FROM product;');
-    $query->execute();
-    $stockInfo = $query->fetchAll(PDO::FETCH_ASSOC);
-
-    if (empty($stockInfo)) {
-        throw new exception('No Product in stock was found', 404);
-        exit;
-    }
-    return $stockInfo; 
-} */
-
-
+include_once('./../Class/orderClass.php');
 
 function getAllFromUser($customer) {
    
@@ -42,68 +26,14 @@ function getAllFromUser($customer) {
     return $result; 
 }
 
-
-
-function createPurchase($customerID, $shipperID, $date, $sum){
-    //return $customerID;
-    //$status = empty($date);
-    //error_log($status);
-    include_once('./../Class/userClass.php');
-    include_once('./../Class/database.php');
-    $database = new Database();
-    $datum = $date;
-    
-    try {
-        $sql_array = array(':customerID' => $customerID, 
-        ':shipperID' => $shipperID,
-        ':datum' => $datum, 
-        ':sum' => $sum);
-        $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $qry = $database->connection->prepare('INSERT INTO `order` (customerID, shipperID, `date`, `sum`)
-         VALUES (:customerID, :shipperID, :datum, :sum);');
-        $qry->execute(array(':customerID' => $customerID, 
-                            ':shipperID' => $shipperID,     
-                            ':datum' => $datum, 
-                            ':sum' => $sum));
-                            $id = $database->connection->lastInsertId();
-                            
-                            return $id;
-                            //$result = $query->fetch(PDO::FETCH_ASSOC);
-        
-    } catch(PDOException $e) {
-        error_log($e->getMessage());
-        throw $e;
+function createFullPurchase($o){
+    $order = new Order(null, $o["shipperID"], $o["customerID"], $o["date"], $o["sum"]);
+    $order->create();
+    for($i = 0; $i < sizeof($o["details"]); $i++){
+        $order->createDetail($o["details"][$i]);
     }
+
 }
-function createPurchaseDetail($purchaseID, $productID, $quantity, $sum){
-    // include_once('./../Class/userClass.php');
-    include_once('./../Class/database.php');
-    $database = new Database();
-    
-    try {
-
-        $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $qry = $database->connection->prepare('INSERT INTO orderDetails (orderID, productID, quantity, sum) 
-                                VALUES (:purchaseID, :productID, :quantity, :sum); 
-                                UPDATE product
-                                SET inStock = ifNull(inStock,0) - :quantity
-                                WHERE productID = :productID');
-
-        $qry->execute(array(':purchaseID' => $purchaseID, 
-                            ':productID' => $productID,     
-                            ':quantity' => $quantity, 
-                            ':sum' => $sum));
-
-        
-        
-        
-    } catch(PDOException $e) {
-        error_log($e->getMessage());
-        throw $e;
-    }
-}
-
 
 function getAllOrders() {
     include_once('./../Class/database.php');
