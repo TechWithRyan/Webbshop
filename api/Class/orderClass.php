@@ -31,6 +31,8 @@ class Order {
 
     public function create(){
         $database = new Database();
+        error_log("make_orders_OOP");
+
         $datum = $this->date;
         
         try {
@@ -59,7 +61,8 @@ class Order {
 
     public function createDetail($detail){
         $database = new Database();
-    
+        error_log("make_orders_details_OOP");
+
         try {
     
             $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -24,6 +24,8 @@ class Newsletter {
 
     public function create() {
         $database = new Database(); 
+        error_log("make_Newsletter_subscription_OOP");
+
         $sth = $database->connection->prepare('INSERT INTO subscription (email, fName, lName)
         VALUES (:email, :fName, :lName)');
         $sth->execute(array(':email' => $this->email, ':fName' => $this->fName, ':lName' => $this->lName));
