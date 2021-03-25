@@ -15,4 +15,3 @@ function postNewsletter($email, $fName, $lName){
 }
 
 ?>
-
