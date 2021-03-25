@@ -1,4 +1,5 @@
 <?php 
+
 include_once('./../Class/database.php');
 
 class Newsletter {
