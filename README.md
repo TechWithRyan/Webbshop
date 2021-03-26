@@ -1,13 +1,12 @@
 # Webbshop grupp 5
-Förutom att uppfylla kravspecen, skall erat projekt innehålla en README.md fil där det tydligt skall framgå:
 
-Route 66 - Grupp 5 (alla G krav är nu klart)
+Route 66 - Grupp 5 (alla G krav är nu klara)
 
 Gruppens medlemmar.
 Kanan Garaisayev
-Andreas Palm Österberg
 Sherin Valestrand
 Ryan-Phillips Cornelio
+Andreas Palm Österberg
 
 https://github.com/RyanCornelio/Webbshop
 
