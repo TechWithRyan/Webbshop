@@ -65,15 +65,7 @@
     <footer class="fixed-bottom">
     <div class="container">
       <div class="row">
-        <!-- <div class="col-12">
-            <h3>Prenumerera på vårt nyhetsbrev</h3>
-              <form class="newsletterField" id ="newsletter-form">
-                <input type="text" name="firstname" id="firstname" placeholder="Förnamn">
-                <input type="text" name="lastname" id="lastname" placeholder="Efternamn">
-                <input type="text" name="email" id="email" placeholder="E-post">
-                <button type="submit" class="btn btn-outline-success" id="newsLetterBtn">Registrera</button>
-              </form>
-        </div> -->
+      
       </div>
     </div>
 </footer>

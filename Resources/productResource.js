@@ -129,17 +129,6 @@ export function getDiscount() {
     })
 }
 
-/* function getAll(){
-    makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {
-        console.log(result);
-        console.log(result[0]['ID']);
-        for (let i = 0; i < result.length; i++){
-            
-        console.log(result.length[i]);
-        }
-    })
-};
-getAll() */
 
 function showBothMenAndWomen(){
     makeRequest('./API/recievers/categoryReciever.php?endpoint=getAll', 'GET', null, (result) => {

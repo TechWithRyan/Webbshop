@@ -28,9 +28,7 @@ function getSpecific($uname, $pw){
     $query->execute(array(':email' => $uname, ':password' => $hashedPW));
     
     $result = $query->fetchAll(\PDO::FETCH_ASSOC);
-    /* echo json_encode($result);
-    exit;  */
-
+ 
     if (empty($result)) {
         throw new exception('No user found', 404);
         exit;

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./style/checkOutStyle.css">
     <link rel="stylesheet" href="./style/shipperStyle.css"> 
     
-    <!-- <script defer src="/Resources/orderResource.js"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -71,13 +70,11 @@
 
 <div class="checkOutForm">                     
   <div id="checkoutField" id="userData">
-    <h1>Förnamn</h1>
-    <input type="text" id="fName">
-    <h1>Efternamn</h1>
-    <input type="text" id="lName">
-    <h1>Mejl</h1>
-        <input type="text" id="email">
-       <h1>Adress</h1>
+        <h1>Förnamn</h1>
+        <input type="text" id="fName">
+        <h1>Efternamn</h1>
+        <input type="text" id="lName">
+        <h1>Adress</h1>
         <input type="text" id="street">
         <h1>Stad</h1>
         <input type="text" id="city">
@@ -87,8 +84,10 @@
         <input type="text" id="country">
         <h1>Telefonnummer</h1>
         <input type="text" id="phone">
-        <h1>Username</h1>
-        <input type="text" id="usernameInput">
+        <!-- <h1>Username</h1>
+        <input type="text" id="usernameInput"> -->
+        <h1>Mejl --> use to login</h1>
+        <input type="text" id="email">
         <h1>Password</h1>
         <input type="password" id="passwordInput">    
       </div>  

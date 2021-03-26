@@ -50,7 +50,6 @@ class Order {
                                 $id = $database->connection->lastInsertId();
                                 $this->ID = $id;
                                 return $id;
-                                //$result = $query->fetch(PDO::FETCH_ASSOC);
             
         } catch(PDOException $e) {
             error_log($e->getMessage());
