@@ -61,7 +61,7 @@ export function getSpecific(event) {
 export function registerNewUser() {  
     var fName = document.getElementById("fName").value
     var lName = document.getElementById("lName").value
-    var email = document.getElementById("usernameInput").value
+    var email = document.getElementById("email").value
     var phone = document.getElementById("phone").value
     var password = document.getElementById("passwordInput").value
     var city = document.getElementById("city").value

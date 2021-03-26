@@ -1,7 +1,7 @@
 # Webbshop grupp 5
 Förutom att uppfylla kravspecen, skall erat projekt innehålla en README.md fil där det tydligt skall framgå:
 
-Route 66 - Grupp 5 
+Route 66 - Grupp 5 (alla G krav är nu klart)
 
 Gruppens medlemmar.
 Kanan Garaisayev
@@ -9,12 +9,20 @@ Andreas Palm Österberg
 Sherin Valestrand
 Ryan-Phillips Cornelio
 
+https://github.com/RyanCornelio/Webbshop
 
 En länk dit projekt går att använda live.
 
-Vid behov: uppgifter att testa med, så som inloggningsuppgifter.
+Granskning: uppgifter att testa med, så som inloggningsuppgifter.
+
+---------------------------
+login: admin
+password: test
 
  
+login: u3
+password: u3
+---------------------------
 
 OBS: Readme filen ska framförallt innehålla en lista över alla kraven i kravspecen nedanför samt en kort kommentar från er - har ni uppfyllt kravet? I så fall, hur?
 Alla sidor skall vara responsiva. (G)

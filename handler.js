@@ -1,5 +1,4 @@
 import { getAllCategory, getDiscount } from './Resources/productResource.js'
-//import { getDiscount } from './Resources/productResource.js'
 import {sendNewsLetter} from './Resources/newsLetterResource.js'
 
 var iKundvagn = [];

@@ -10,8 +10,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = postNewsletter($_POST['email'], $_POST['firstname'], $_POST['lastname']);
         echo json_encode($result); 
 
-    
-
 
 } else if($_SERVER['REQUEST_METHOD'] == 'GET') {
 

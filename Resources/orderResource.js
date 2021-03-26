@@ -28,15 +28,6 @@ function makeRequest(url, method, data, callback) {
 }
   
 
-/* async function getWithVar(variable, value) {​​​​​​​​
- 
-const response = awaitmakeReq("./api/recievers/orderReciever.php?" + variable + "=" + value,  "GET")
-return response
-
-}
-    
-
-await makeReq("./api/recievers/orderReciever.php?" + variable + "=" + value, "GET") */
 
 function getCustomerID(){
     let customer = getCurrentUser()
@@ -62,14 +53,6 @@ export function getUserOrders() {
     })
 }
 
-/* export function checkInStock() {
-    makeRequest('./../API/recievers/orderReciever.php?endpoint=checkInStock', 'GET', null, (checkInStock) => {
-        if (checkInStock.status == 404){
-        } else {
-            renderOrders(checkInStock);     
-        }
-    })
-} */
 
 function renderOrders(result) {
     let MainOrderDiv = document.getElementsByClassName("MainOrderDiv")[0];
@@ -299,8 +282,7 @@ let cart = getCart()
     data.set("sortedCart", JSON.stringify(order))
     data.set("endpoint", "createOrder")
     makeRequest('./../API/recievers/orderReciever.php', 'POST', data, (result) => {
-        //data.delete('sortedCart')
-        //data.delete('endpoint')
+
         console.log(result)
         console.log(order)
     })

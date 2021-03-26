@@ -1,7 +1,4 @@
-//get current user
-// if (current user)
-// submitform innerhtml = ""
-// ny knapp? eventlistener? -> submit, makePurchase
+
 
 import { registerNewUser } from './Resources/userResource.js'
 import { getLogggedInUser } from './Resources/userResource.js'
@@ -21,10 +18,7 @@ cheakFunc();
 
 document.getElementById("checkoutSubmit").addEventListener("click", buttonPayment);
 
-/* function buttonPayment(){
-    makeOrder();
-    afterOrderAlert();
-}; */
+
 
 function buttonPayment(){
     getLogggedInUser((customer) => {        

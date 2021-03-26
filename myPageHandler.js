@@ -22,17 +22,9 @@ function checkAdminStatus(){
         } else if (customer[0].isAdmin == 0) {
             // inte admin
             getUserOrders();
-            //console.log(getUserOrders);
             console.log(customer[0].isAdmin);
 
         }
     })
     
 }
-/* 
-function numberOfProductsInCart() {
-    var getCart = JSON.parse(localStorage.getItem("localCart"))
-    var quantity = document.getElementById("numberOfItemsInCart")
-    quantity.innerHTML = getCart.length  
-}
-numberOfProductsInCart() */
